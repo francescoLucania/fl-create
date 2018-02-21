@@ -4,10 +4,17 @@ import Home from '../../pages/Home/Home';
 // import About from '../../pages/About/About';
 // import Contacts from '../../pages/Contacts/Contacts';
 
+import styled from 'styled-components';
+
+const styleMain = styled.Main`
+  flex: 1;
+  width: 100%;
+`;
+
 class Main extends Component {
     render() {
         return (
-            <main className="main">
+            <styleMain>
                 <div className='container'>
                     <Switch>
                         <Route exact path='/' component={Home}/>
@@ -15,7 +22,7 @@ class Main extends Component {
                         {/*<Route path='/contacts' component={Contacts}/>*/}
                     </Switch>
                 </div>
-            </main>
+            </styleMain>
         )
     }
 }
