@@ -3,23 +3,30 @@ import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
 
-import styled from 'styled-components';
+import styled, {css, ThemeProvider} from 'styled-components';
+import {baseTheme, Container, sizesMQ} from'../../StyleConfig';
 
-const fcBaseTemplate = styled.div`
+
+const StyleApp= styled.div`
   display: flex;
-  flex-direction: column
+  flex-direction: column;
   justify-content: space-between;
+  min-height: 100vh;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: ${props => props.theme.colorBase}
 `;
-
 
 class App extends Component {
     render() {
         return (
-            <fcBaseTemplate>
-                <Header/>
-                <Main/>
-                <Footer/>
-            </fcBaseTemplate>
+            <ThemeProvider theme={baseTheme}>
+                <StyleApp>
+                    <Header/>
+                    <Main/>
+                    <Footer/>
+                </StyleApp>
+            </ThemeProvider>
         );
     }
 }

@@ -1,10 +1,23 @@
 import React, {Component} from 'react';
 
+// styles
+import styled, {css, ThemeProvider} from 'styled-components';
+import {baseTheme, Container, sizesMQ, media} from'../../StyleConfig';
+
+
+const StyleHeader = styled.footer`
+    min-height: 10rem;
+`;
+
+
 class Header extends Component {
     render() {
         return (
-            <header className="header">
-            </header>
+            <StyleHeader>
+                <Container>
+                    header
+                </Container>
+            </StyleHeader>
         )
     }
 }
