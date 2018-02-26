@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 // styles
 import styled, {css, ThemeProvider} from 'styled-components';
-import {baseTheme, Container, sizesMQ, media} from'../../StyleConfig';
+import {Container, sizesMQ, media} from'../../StyleConfig';
 
 
 const StyleHeader = styled.footer`

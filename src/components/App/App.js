@@ -4,7 +4,7 @@ import Main from '../Main/Main';
 import Footer from '../Footer/Footer';
 
 import styled, {css, ThemeProvider} from 'styled-components';
-import {baseTheme, Container, sizesMQ} from'../../StyleConfig';
+import {baseTheme, sizesMQ} from'../../StyleConfig';
 
 
 const StyleApp= styled.div`

@@ -2,13 +2,7 @@ import React, {Component} from 'react';
 
 // styles
 import styled, {css, ThemeProvider} from 'styled-components';
-import {baseTheme, Container, SectionBox, sizesMQ, media, TitleH1, TitleH2, TitleH3, Wysiwyg} from'../../StyleConfig';
-
-// Create a <Wrapper> react component that renders a <section> with
-// some padding and a papayawhip background
-const HomeSection = styled.section`
-
-`;
+import {Container, SectionBox, sizesMQ, media, TitleH1, TitleH2, TitleH3, Wysiwyg} from'../../StyleConfig';
 
 const title = 'Hello World, this is my first styled component!';
 
