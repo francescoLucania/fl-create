@@ -446,7 +446,7 @@ class Header extends Component {
 
         var bodyScrollTop = Math.max(window.pageYOffset, document.documentElement.scrollTop, document.body.scrollTop);
 
-        // document.getElementById('site-header').classList.add('site-header-scroll-mod');
+        document.getElementById('site-header').classList.add('site-header-scroll-mod');
 
 
 
@@ -464,7 +464,7 @@ class Header extends Component {
 
     render() {
 
-        const headerClassName = this.state.isFixed ? "site-header-scroll-mod" : "site-header";
+        const headerClassName = this.state.scrollMode ? "site-header-scroll-mod" : "";
 
         return (
             <HeaderBody id="site-header" className={headerClassName}>
