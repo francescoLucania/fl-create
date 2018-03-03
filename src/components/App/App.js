@@ -18,6 +18,41 @@ const StyleApp= styled.div`
   color: ${props => props.theme.colorBase}
 `;
 
+export const siteNavigateMenuLinks = [
+
+    {
+        link: '/',
+        label: '01: Home'
+    },
+
+    {
+        link: '/profile',
+        label: '02 Profile'
+    },
+
+    {
+        link: '/contacts',
+        label: '03 Contacts'
+    }
+
+];
+
+
+export const siteFooterContacts = [
+
+    {
+        link: '//vk.com/francescolucania',
+        label: '04: vk.com'
+    },
+
+    {
+        link: 'mailto:francescolucaniacom@gmail.com',
+        label: '05: francescolucaniacom@gmail.com\n'
+    }
+
+];
+
+
 class App extends Component {
     render() {
         return (

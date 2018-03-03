@@ -21,7 +21,7 @@ export const baseTheme = {
 
     // colors
     colorBase: '#121314',
-    colorLite: rgba('#121314', .8),
+    colorLighte: rgba('#121314', .8),
     colorLighter: rgba('#121314', .6),
     colorLightest: rgba('#121314', .4),
 
@@ -156,7 +156,7 @@ export const Button = styled.button`
         
         ${media.lg`
             &:hover {
-                background: ${props => props.theme.colorLite}
+                background: ${props => props.theme.colorLighte}
         `}
 `;
 

@@ -6,13 +6,18 @@ import Home from '../../pages/Home/Home';
 
 // styles
 import styled, {css, ThemeProvider} from 'styled-components';
-// import {baseTheme} from'../../StyleConfig';
+import {baseTheme, sizesMQ, media} from'../../StyleConfig';
 
 
 const StyleMain = styled.main`
   flex: 1;
   width: 100%;
-  background: ${props => props.theme.bgColorMode}
+  background: ${props => props.theme.bgColorMode};
+  
+   ${media.lg`
+      margin-top: 12rem;
+    `}
+  
 `;
 
 class Main extends Component {
