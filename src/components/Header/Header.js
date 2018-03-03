@@ -18,15 +18,12 @@ const HeaderBody = styled.header`
     left: 0;
     z-index: 115;
     width: 100%;
+    transition: all .6s;
     
     &.site-header-scroll-mod {
-    
-        .header-grid {
-          padding: 2rem 3rem;
-        }
         
         .logo-box {
-          ${size('4rem')};
+          ${size('4.5rem')};
         }
     }
     
@@ -238,7 +235,6 @@ const HeaderGrid = styled.div`
     padding: ${props => props.theme.indentsXS};
     background: #fff;
     transition: all .6s;
-    will-change: padding;
     
      ${media.xs`
         flex-direction: row-reverse;
@@ -497,7 +493,7 @@ class Header extends Component {
                     </div>
                 </div>
 
-                <HeaderGrid className="header-grid">
+                <HeaderGrid>
                     <HeaderLogo className="logo-box">
                         <img src={Logo} alt=""/>
                     </HeaderLogo>
