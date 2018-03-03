@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
 import Home from '../../pages/Home/Home';
 import Demo from '../../pages/Demo/Demo';
+import BlogPage from '../../pages/BlogPage/BlogPage';
+
 // import About from '../../pages/About/About';
 // import Contacts from '../../pages/Contacts/Contacts';
 
@@ -70,8 +72,8 @@ class Main extends Component {
             <StyleMain id="site-main" className={mainClassName}>
                 <Switch>
                     <Route exact path='/' component={Home}/>
-                    <Route path='/' component={Demo}/>
-                    {/*<Route path='/about' component={About}/>*/}
+                    <Route path="/:id" component={BlogPage} />
+                    <Route path='/demo' component={Demo}/>
                     {/*<Route path='/contacts' component={Contacts}/>*/}
                 </Switch>
             </StyleMain>
