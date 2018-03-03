@@ -1,7 +1,7 @@
 import styled, {css, ThemeProvider} from 'styled-components';
 import { rgba, size } from 'polished';
 
-// variables
+// VARIABLE
 export const baseTheme = {
 
     // Responsive
