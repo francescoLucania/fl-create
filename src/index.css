@@ -25,6 +25,11 @@ body > #root {
   width: 100%;
 }
 
+::selection {
+  color: #fff;
+  background: #5409ff;
+}
+
 h1,
 h2,
 h3,
@@ -45,6 +50,7 @@ textarea {
   border: none;
   color: inherit;
   font: inherit;
+  outline-color: #5409ff;
 }
 
 fieldset {

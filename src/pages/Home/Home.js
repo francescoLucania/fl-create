@@ -2,7 +2,10 @@ import React, {Component} from 'react';
 
 // styles
 import styled, {css, ThemeProvider} from 'styled-components';
-import {Container, SectionBox, sizesMQ, media, TitleH1, TitleH2, TitleH3, Wysiwyg} from'../../StyleConfig';
+import {Container, SectionBox, Wysiwyg, Button, ButtonLinkMod, Checkbox, Radio, InputForm, TextareaForm} from'../../StyleConfig';
+
+import image1 from '../../assets/d1.jpg'
+import image2 from '../../assets/d2.jpg'
 
 const title = 'Hello World, this is my first styled component!';
 
@@ -15,19 +18,155 @@ class Home extends Component {
             <SectionBox>
                 <Container>
                     <Wysiwyg>
-                        <TitleH1>h1</TitleH1>
-                        <p>There are times when our need to preserve a myth prevails over the reality of what we know to be true; take, for example, the presidency of <a href="https://medium.com/s/story/come-get-your-life-come-get-your-death-on-ryan-cooglers-black-panther-616039d97e5d">Barack Obama</a>. I’m very serious here. I recently wrote a piece on the myths surrounding Jay-Z and Beyoncé and the need to deconstruct the black artist vs. the black capitalist. A woman wrote to let me know that she was not impressed with my work. She explained that I hadn’t appreciated in my essay what the Carters or President Obama meant to her personally, and to the entire black community. She admitted that upon careful examination she found many of Obama’s choices as problematic as I did. But she was less interested in Obama the man than Obama the symbol. She needed Obama and the Carters in her life for very specific reasons, and “the truth,” while relevant, wasn’t going to intrude on her myth.</p>
-                        <p>There are some people who get enraged when a writer or critic comes along and “tears a black movie down.” Tearing down in this case means engaging with it critically, not just praising it unequivocally because it is black. (I was called a “chicken-fucker” in one camp for criticizing the Carters.) I understand where this comes from — as so few “black” productions come along with real money and attention behind them — and money in Hollywood means love — it makes sense that we all want to go out and support it, to make the film a success so we can look forward to quality black movies in the future. (The film has already set box office records.) Consumer culture also encourages us to support the film without examining it, buying the DVD and Halloween costume for our kids while staying firmly within the confines of the myth. And myths are powerful: Barack Obama’s presidency was “sold” to us this way (and won a branding award). But shouldn’t we question whether a movie is progressive just because it has a black director, a reference to black history in the title and black people in it? There is black love in “Black Panther” to be sure, but it is a Marvel Studios film — distributed by Disney — which means the political consciousness of the film begins and ends with the company’s financial bottom line.</p>
-                        <TitleH2>h2</TitleH2>
+
+                        <Button>Button</Button>
+                        <br/>
+                        <br/>
+                        <br/>
+
+                        <ButtonLinkMod href="#">Button Link</ButtonLinkMod>
+
+                        <br/>
+                        <br/>
+                        <br/>
+
+                        <form>
+
+                            <InputForm>
+                                <input type="text" placeholder="input"/>
+                            </InputForm>
+                            <br/>
+                            <InputForm>
+                                <input type="text" placeholder="input disabled" disabled/>
+                            </InputForm>
+                            <br/>
+                            <InputForm className="is-error">
+                                <input type="text" placeholder="input error"/>
+                            </InputForm>
+
+                            <br/>
+                            <TextareaForm>
+                                <textarea>hello word</textarea>
+                            </TextareaForm>
+                            <br/>
+                            <br/>
+
+
+                            <Checkbox>
+                                <input type="checkbox"/>
+                                <span/>
+                            </Checkbox>
+                            <br/>
+                            <br/>
+                            <Checkbox>
+                                <input type="checkbox" disabled/>
+                                <span/>
+                            </Checkbox>
+                            <br/>
+                            <br/>
+                            <Checkbox className="is-error">
+                                <input type="checkbox"/>
+                                <span/>
+                            </Checkbox>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <Radio>
+                                <input type="checkbox"/>
+                                <span/>
+                            </Radio>
+                            <br/>
+                            <br/>
+                            <Radio>
+                                <input type="checkbox" disabled/>
+                                <span/>
+                            </Radio>
+                            <br/>
+                            <br/>
+                            <Radio className="is-error">
+                                <input type="checkbox"/>
+                                <span/>
+                            </Radio>
+
+                        </form>
+
+                        <h1>Bloodhound Gang</h1>
+                        <p>Американская рок-группа из Филадельфии, начинавшая с хип-хопа под влиянием Beastie Boys и с ростом популярности ставшая использовать в музыке элементы фанка, рэпкор-метала и электроник-рока.</p>
+
+                        <figure>
+                            <img src={image1} alt="бенедикт кембербетч"/>
+                            <figcaption></figcaption>
+                        </figure>
+
+                        <h2>История </h2>
+                        <h3>До выпуска первого альбома</h3>
+                        <p>Впервые коллектив «Bloodhound Gang» заявил о себе в 1992 году как Альтернативная группа, названная «Bang Chamber 8». Группа состояла из Джимми Попа и Дэдди Лонг Легза. Ими была выпущена одна кассета, с таким же названием, что и у группы. Вскоре участники изменили название на «Bloodhound Gang», а также поменяли музыкальный стиль. Новое название «Bloodhound Gang» взято из детской телепередачи 1980-х годов компании PBS «3-2-1 Contact», в которой три молодых оперативника разгадывают тайны и борются с преступностью.
+                            Не сумев пробиться для выступлений в клубах, «Bloodhound Gang» первые выступления проводили в комнате Эвила Джареда Хасселхоффа в обмен на пиво «Schlitz», сигареты «Marlboro» и возможность получить одну из своих первых демо-кассет под названием «Just Another Demo». В апреле 1994 года группа выпускает свою вторую демо-кассету — «The Original Motion Picture Soundtrack to Hitler’s Handicapped Helpers». Кассетой заинтересовалась компания «Cheese Factory Records», с которой в дальнейшем был заключён контракт. В ноябре 1994 года группа наконец выпустила свой первый EP (мини-альбом) «Dingleberry Haze», проданный в количестве всего ста экземпляров.
+                            Летом 1994 года, Джимми Поп снялся в небольшой роли в короткометражном фильме «The Chick That Was Naked» независимого режиссёра Курта Фицпатрика. А также одна из песен группы использовалась в качестве саундтрека к фильму.
+                            В 1996 году группу пригласили в Германию на один из крупнейших рок-фестивалей «Rock am Ring».</p>
+
+                        <figure>
+                            <img src={image2} alt="бенедикт кембербетч"/>
+                            <figcaption></figcaption>
+                        </figure>
+
+                        <h3>«Use Your Fingers»</h3>
+                        <p>В марте 1995 года «Bloodhound Gang» подписали новый контракт с «Columbia Records» и выпустили свой первый полный альбом под названием «Use Your Fingers». У группы началось турне по Соединенным Штатам, но, для формирования новой рэп-группы Wolfpac, команду покидают Дэдди Лонг Легз и M.S.G. В качестве замены к группе присоединяются басист Эвил Джаред Хасселхофф и диджей Tard-E-Tard. После окончания турне контракт с «Columbia Records» был расторгнут, и из группы ушли барабанщик Скип Опоттумас и Tard-E-Tard. Им на замену пришли ударник Спанки Джи и диджей Кю-Болл.</p>
+
+                        <h3>«One Fierce Beer Coaster»</h3>
+                        <p>В марте 1996 года группа в новом составе записала свой второй полный альбом, «One Fierce Beer Coaster», впервые выпущенный на студии их первого лейбла «Cheese Factory Records» (теперь именуемого «Republic Records») и переизданный «Geffen Records» в 1998 году без двух треков. Они начали свой первый «реальный тур» по Соединенным Штатам, Европе и Австралии. Альбом содержал сингл «Fire Water Burn», ставший лидером многих чартов. В 2004 году песня стала саундтреком к фильму «Фаренгейт 9/11» вследствие того, что была популярной среди военнослужащих США в Ираке. Летом 1996 года Джимми Поп Али сыграл роль второго плана в фильме «Kin» режиссёра Курта Фицпатрика. Несколько композиций группы были использованы для звуковой дорожки к фильму.</p>
+
+                        <h3>«Hooray for Boobies»</h3>
+                        <p>29 февраля 2000 года группа выпустила свой третий альбом, «Hooray for Boobies». Этот альбом был записан в Калифорнии, куда переехали группа и их инженер. Альбом был записан частично в Лос-Анджелесе, где группа арендовала студию звукозаписи. «Bloodhound Gang» начали ещё два тура по Европе, где их популярность резко возросла (песня «The Bad Touch» стала #1 в Германии, а песня «Along Comes Mary» попала в Toп 10 в Германии[1]). Группа вернулась после продажи более пяти миллионов альбомов.</p>
+                        <p>В 2003 году группа выпустила DVD, озаглавленный «One Fierce Beer Coaster», в котором рассказывается об их одноимённом туре 1997 года.</p>
+
+                        <h3>«Hefty Fine»</h3>
+                        <p>Новый альбом группы, «Hefty Fine», был выпущен 13 сентября 2005 года. Название (рус. «Здоровенный штраф») возникло после того, как Джаред Хассельхофф был оштрафован на $ 10000 в ходе съёмок шоу «Viva la Bam» для MTV (эпизод «The Scavenger Hunt»). Джимми заявил, что Джаред был арестован после попытки помочиться с крыши парковки в бумажный стаканчик, который держал Джимми. Оригинальное название CD, «Heavy Flow», было пересмотрено, когда стало известно, что у музыканта Moby уже существует песня с таким названием. Первый сингл, «Foxtrot Uniform Charlie Kilo», получил ротацию на музыкальных каналах. Несмотря на то, что трек «No Hard Feelings» попал в Modern Rock Top 50, второй сингл «UHN Tiss UHN Tiss UHN Tiss» ограниченно транслировался только на нескольких музыкальных радиоканалах.</p>
+                        <p>В 2006 году группа объявила кампанию по замене гимна штата Пенсильвания на их собственную песню «Pennsylvania» с альбома. Кампания имела исключительно рекламный характер.</p>
+
+                        <h3>«Screwing You on the Beach at Night»</h3>
+                        <p>В 2007 году группа записала сингл «Screwing You on the Beach at Night». Впервые он появился на iTunes 17 июля 2007 года, а позже вышел как сингловый альбом на CD. Так же он был представлен в сборнике «Viva La Bands: Volume 2», выпущенном 4 сентября 2007 года..</p>
+                        <p>В сингл вошли 2 композиции — «Screwing You on the Beach at Night» и «Screwing You on the Beach at Night» (Cape May I Remix). </p>
+
+                        <h3>«Show Us Your Hits»</h3>
+                        <p>3 декабря 2010 года группа выпустила новый сборник песен «Show Us Your Hits», который, кроме старых популярных песен («I Hope You Die», «Fire Water Burn»), включает 2 новых песни — «Altogether Ooky» и «Disco Pogo». Диск выпущен в преддверии планируемого нового альбома «Fishin' For Hookers». 8 августа 2014 года на Youtube канале был выложен новый трек «Chew Toy», а чуть позже и его ремикс. Через 2 месяца, 20 октября вышел трек «American Bitches». 23 февраля 2015 года появился сингл «Dimes» и его ремикс. 11 мая вышел трек «Clean Up In Aslie Sexy» и 3 ремикса на этот трек.</p>
+
+                        <h3>«Hard-off»</h3>
+                        <p>В 2015 году вышел новый альбом «Hard-off», который можно приобрести на официальном сайте[2].</p>
+                        <p>4 марта 2017 года в интервью немецкого сайта KinKats Хасселхофф заявил о том, что Bloodhound Gang соберутся снова только в том случае, если президент Дональд Трамп покинет свой пост[3].</p>
+
+                        <div className="video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/If9fC9aJd-U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>
+
+                        <h2>Дискография</h2>
+
                         <ul>
-                            <li>item 1</li>
-                            <li>item 2 + <a href="https://www.youtube.com/watch?v=8jlYB5ielJ8&index=6&list=RDMMcbB3iGRHtqA" target="_blank">Link</a></li>
-                            <li>item 3</li>
-                            <li>item 4</li>
+                            <li>1995 — <a href="https://ru.wikipedia.org/wiki/Use_Your_Fingers" target="_blank">«Use Your Fingers»</a></li>
+                            <li>1996 — <a href="https://ru.wikipedia.org/wiki/One_Fierce_Beer_Coaster" target="_blank">«One Fierce Beer Coaster»</a></li>
+                            <li>2000 — <a href="https://ru.wikipedia.org/wiki/Hooray_for_Boobies" target="_blank">«Hooray for Boobies»</a></li>
+                            <li>2005 — <a href="https://ru.wikipedia.org/wiki/Hefty_Fine" target="_blank">«Hefty Fine»</a></li>
+                            <li>2015 — «Hard-Off»</li>
                         </ul>
-                        <p>I had to respect her point — we all cling to myths of one kind or another. And while it may be too early to determine all the myths that surround “Black Panther” and its fictitious African country Wakanda, I can see the film’s symbolic value and the reasons why we need it right now. In the showings I attended on the opening weekend in New York City, the celebration was palpable; a man called out in the theater lobby to find the other members of his “tribe”, another woman shouted, “Wakanda lives!” There was Kinte cloth, elaborate jewelry, natural hairstyles, and permission in the air to be unapologetically inspired by African culture; a powerful reminder that black is indeed still beautiful. A movie like “Black Panther” reminds us that being of African descent isn’t only about fighting oppression around the world; it’s about enjoying a spectacular cultural legacy. Being black is fun! </p>
-                        <TitleH3>h3</TitleH3>
-                        <p>At the same time, I suspect there are other viewers who go to Ryan Coogler’s “Black Panther” looking for a film about resistance, and who are finding instead a slightly blacker and more violent “The Lion King”, audiences who walk out of the theater bewildered, unsure of what they have just seen. Still others are angry, not at white oppression or racism, where one’s anger should be directed after watching a film called “Black Panther”, but at Hollywood and the filmmakers themselves. And, finally, more than a few of the people who are pissed off about the film are Africans. Not Wakandan Africans — real ones.</p>
+
+                        <div className="ya-music">
+                        <iframe frameborder="0"  width="900" height="600" src="https://music.yandex.ru/iframe/#album/3133381/">Слушайте <a href='https://music.yandex.ru/album/3133381'>Hard-Off</a> — <a href='https://music.yandex.ru/artist/11952'>Bloodhound Gang</a> на Яндекс.Музыке</iframe>
+                        </div>
+
+
+                        <h2>Хулиганские выходки</h2>
+
+                        <p>Группа известна своими провокационными, шокирующими и хулиганскими выходками.</p>
+                        <p>Во время исполнения песни «Yummy Down On This» на концертах Джимми Поп после второго припева сует в рот микрофон, вызывая тем самым у себя рвотный рефлекс.</p>
+                        <p>В 2006 году на фестивале «MTV Campus Invasion» басист Джаред Хасселхофф достал перед изумлённой толпой зрителей свой пенис и начал мочиться прямо на лицо солиста Джимми Попа, затем Джимми снял кепку и Джаред помочился в неё, после чего солист вновь надел её на себя</p>
+                        <p>Во время концерта в Одессе 31 июля 2013 года в клубе «Ибица» бас-гитарист Джаред Хасселхофф со словами «Не рассказывайте об этом Путину» засунул флаг России в трусы, вытащил с обратной стороны и бросил в толпу.</p>
+                        <p>Инцидент вызвал резонанс в обществе, о нём написал ряд российских массовых изданий, тем более, что 2 августа группа должна была выступать на рок-фестивале Kubana в Краснодарском крае. Член Общественной палаты РФ Антон Коробков-Землянский потребовал возбудить против участников группы уголовное дело, после чего министр культуры РФ Владимир Мединский в резком тоне высказался о коллективе в своём твиттере и сообщил о том, что концерт в России отменяется, а депутат Госдумы Роберт Шлегель призвал не пускать музыкантов на территорию страны. Примечательно, что за день до этого на концерте в Киеве басист группы совершил действия, истолкованные некоторыми как «обоссал флаг Украины»(официальное заявление об этом последовало вслед за российским обвинением, и многими расценивается как «резонансное» обвинение вслед за российским), после чего милиция возбудила уголовное дело за надругательство над государственными символами страны[14], а украинские хакеры заблокировали веб-сайт группы. Через неделю после инцидента было открыто уголовное производство по статье 296 УК Украины (хулиганство) в связи с осквернением и российского флага.</p>
+                        <p>Впоследствии независимые СМИ опубликовали свидетельства того, что в Киеве музыкант Bloodhound Gang не осквернял украинский флаг и то, что он изображал на сцене, не имело никакого отношения к мочеиспусканию. Неправильное восприятие произошедшего связано с тем, что изначально был опубликован слишком короткий видеоролик, из которого нельзя было сделать правильный вывод о сути перфоманса басиста. При этом факт осквернения российского флага в Одессе под сомнение не ставился.</p>
+                        <p>3 августа 2013 в Анапе молодёжные активисты закидали участников группы яйцами и помидорами в гостинице, из которой им пришлось бежать в аэропорт через чёрный ход, причём эти действия публично одобрил губернатор края Александр Ткачёв. В этот же день на Bloodhound Gang в аэропорту напала группа мужчин: в бизнес-зале двое местных казаков попытались их избить, однако полиция разняла дерущихся. По факту нападения уголовное дело против казаков, которые, по утверждению правоохранителей, не были найдены, не заводилось из-за отсутствия состава преступления. Примечательно, что, судя по опубликованному каналом Russia Today видео с места событий, нападавшими в отместку был также осквернён американский флаг, которым они изначально собирались душить Джареда.</p>
+                        <p>В итоге, 9 сентября 2013 года СК РФ завел дело за надругательство над государственным символом . Кроме того, Bloodhound Gang на пять лет запретили въезд на территорию России, а их песни и клипы были на долгое время убраны из ротации крупнейших радиостанций и музыкальных телеканалов.</p>
+                        <p>В 2013 году на концерте в Амстердаме Джаред Хасселхофф полностью разделся на сцене и перед зрителями предстал его пенис с привязанным к нему флагом Нидерландов.</p>
+                        <p>Джаред Хасселхофф нередко во время концертов выпивает с поклонниками алкоголь, спускаясь в зал или поливая их им прямо со сцены.</p>
                     </Wysiwyg>
                 </Container>
             </SectionBox>

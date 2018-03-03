@@ -12,6 +12,7 @@ const StyleApp= styled.div`
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
+  font-family: ${props => props.theme.baseFontFamily};
   font-size: 1.6rem;
   line-height: 1.5;
   color: ${props => props.theme.colorBase}
