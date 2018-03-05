@@ -121,8 +121,8 @@ export const TitleH1 = styled.h1`
 export const TitleH2 = styled.h2`
     font-family: ${props => props.theme.headingFontFamily};
     font-weight: ${props => props.theme.headingFontWeight};
-    font-size: 3.2rem;
-    line-height: 1.4;
+    font-size: 2.8rem;
+    line-height: 3.6rem;
     
     ${media.md`
     font-size: 3.2rem;
@@ -369,8 +369,8 @@ export const Wysiwyg = styled.div`
     > h2 {
         font-family: ${props => props.theme.headingFontFamily};
         font-weight: ${props => props.theme.headingFontWeight};
-        font-size: 3.2rem;
-        line-height: 1.4;
+        font-size: 2.8rem;
+        line-height: 3.6rem;
         
         ${media.md`
             font-size: 3.2rem;
@@ -586,7 +586,7 @@ export const Wysiwyg = styled.div`
         ${media.lg`
             margin-left: -10rem;
             margin-right: -10rem;
-            padding-bottom: 71.25%; // 16:9
+            padding-bottom: 70.25%; // 16:9
         `};
        
         position: relative;
@@ -636,3 +636,5 @@ export const Wysiwyg = styled.div`
         }
     }
 `;
+
+export const ArticleWysiwyg = Wysiwyg.withComponent('article');

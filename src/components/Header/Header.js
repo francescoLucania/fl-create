@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types'
+import {NavLink, Link} from 'react-router-dom';
 
 // styles
 import styled, {css, ThemeProvider} from 'styled-components';
 import {rgba, size, ellipsis} from 'polished';
 import {Container, sizesMQ, media} from'../../StyleConfig';
 import Logo from '../../assets/logo.jpg';
-import {NavLink, Link} from 'react-router-dom';
+
 
 import {siteNavigateMenuLinks,siteFooterContacts} from '../App/App'; // site menu array
 
@@ -418,9 +419,6 @@ const HeaderBurgerBox = styled.div`
 
 `;
 
-
-
-
 class Header extends Component {
 
     constructor(props) {
@@ -450,7 +448,7 @@ class Header extends Component {
 
 
 
-        if (bodyScrollTop > 120) {
+        if (bodyScrollTop > 80) {
             document.getElementById('site-header').classList.add('site-header-scroll-mod');
             this.state = { scrollMode: true };
 

@@ -19,6 +19,7 @@ class BlogPage extends React.Component {
                     post: post,
                 });
             })
+
     }
     render() {
         if (!this.state.post) return <div>Загрузка...</div>

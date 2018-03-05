@@ -6,6 +6,6 @@ import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import '../node_modules/normalize.css/normalize.css';
 
-ReactDOM.render(<HashRouter><App/></HashRouter>, document.getElementById('root'));
+ReactDOM.render(<BrowserRouter><App/></BrowserRouter>, document.getElementById('root'));
 
-registerServiceWorker();
+// registerServiceWorker();

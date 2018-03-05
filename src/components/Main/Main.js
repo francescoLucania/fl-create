@@ -14,6 +14,7 @@ import {baseTheme, sizesMQ, media} from'../../StyleConfig';
 
 const StyleMain = styled.main`
   flex: 1;
+  margin-top: 10rem;
   width: 100%;
   background: #fff;
   will-change: background;
@@ -28,6 +29,7 @@ const StyleMain = styled.main`
    }
   
 `;
+
 
 class Main extends Component {
 
@@ -52,7 +54,7 @@ class Main extends Component {
 
 
 
-        if (bodyScrollTop > 120) {
+        if (bodyScrollTop > 80) {
             document.getElementById('site-main').classList.add('site-main-scroll-mod');
             this.state = { scrollMode: true };
 
@@ -72,7 +74,7 @@ class Main extends Component {
             <StyleMain id="site-main" className={mainClassName}>
                 <Switch>
                     <Route exact path='/' component={Home}/>
-                    <Route path="/:id" component={BlogPage} />
+                    {/*<Route path="/:id" component={BlogPage} />*/}
                     <Route path='/demo' component={Demo}/>
                     {/*<Route path='/contacts' component={Contacts}/>*/}
                 </Switch>
