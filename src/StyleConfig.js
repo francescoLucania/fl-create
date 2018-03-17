@@ -116,6 +116,16 @@ export const TitleH1 = styled.h1`
     ${media.md`
     font-size: 4.2rem;
     `}
+    
+    > a {
+      text-decoration: none;
+      color: ${props => props.theme.colorBase}
+    }
+        
+    > a:visited {
+      text-decoration: none;
+      color: ${props => props.theme.colorBase}
+    }
 `;
 
 export const TitleH2 = styled.h2`
@@ -128,6 +138,16 @@ export const TitleH2 = styled.h2`
     font-size: 3.2rem;
     line-height: 4rem;
     `}
+    
+    > a {
+      text-decoration: none;
+      color: ${props => props.theme.colorBase}
+    }
+        
+    > a:visited {
+      text-decoration: none;
+      color: ${props => props.theme.colorBase}
+    }
 `;
 
 export const TitleH3 = styled.h3`

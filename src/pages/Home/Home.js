@@ -22,18 +22,37 @@ const HomeBlog = styled.main`
       ${media.lg`
         margin-bottom: 6rem;
       `}
-      
-      
     }
     
     > header {
         margin-bottom: ${props => props.theme.indentsLG};
+        text-align: center;
         
         ${media.lg`
             margin: 0 auto 2rem;
             width: 80rem;
         `}
     } 
+  }
+`;
+
+const ArticleImage = styled.main`
+  > img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  
+    &:not(last-child) {
+      margin-bottom: 2rem;
+      
+      ${media.md`
+        margin-bottom: 2rem;
+      `}
+            
+      ${media.lg`
+        margin-bottom: 3rem;
+      `}
+    }
   }
 `;
 
@@ -79,11 +98,14 @@ class Home extends Component {
                             this.state.posts.map(item => (
                                 <article key={item.id}>
                                     <header>
-                                        <TitleH2>{item.title.rendered}</TitleH2>
+                                        <TitleH2><Link to={`/${item.id}`}>{item.title.rendered}</Link></TitleH2>
                                         <ArticleDate><span>{item.date_gmt}</span></ArticleDate>
                                     </header>
-
-                                    <Wysiwyg dangerouslySetInnerHTML={{ __html : item.content.rendered }}></Wysiwyg>
+                                    <Link to={`/${item.id}`}>
+                                        <ArticleImage>
+                                            <img src={item.better_featured_image.source_url} alt=""/>
+                                        </ArticleImage>
+                                    </Link>
                                 </article>
                             ))
                         }

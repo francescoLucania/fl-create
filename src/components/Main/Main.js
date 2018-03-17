@@ -71,12 +71,10 @@ class Main extends Component {
         const mainClassName = this.state.scrollMode ? "site-main-scroll-mod" : "";
 
         return (
-            <StyleMain id="site-main" className={mainClassName}>
+            <StyleMain id="site-main">
                 <Switch>
                     <Route exact path='/' component={Home}/>
-                    {/*<Route path="/:id" component={BlogPage} />*/}
-                    <Route path='/demo' component={Demo}/>
-                    {/*<Route path='/contacts' component={Contacts}/>*/}
+                    <Route path="/:id" component={BlogPage} />
                 </Switch>
             </StyleMain>
         )

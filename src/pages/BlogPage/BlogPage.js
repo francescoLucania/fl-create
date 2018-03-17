@@ -3,30 +3,99 @@ import BLOG_API from '../../pages/Home/Home';
 
 // styles
 import styled, {css, ThemeProvider} from 'styled-components';
-import {Container, SectionBox, Wysiwyg, Button, ButtonLinkMod, Checkbox, Radio, InputForm, TextareaForm} from'../../StyleConfig';
+import {media, Container, SectionBox, Wysiwyg, Button, ButtonLinkMod, TitleH1, TitleH2} from'../../StyleConfig';
+
+var content;
+
+const ArticlePage = styled.div`
+  > article {
+    &:not(last-child) {
+      margin-bottom: ${props => props.theme.indentsLG};
+      
+      ${media.md`
+        margin-bottom: 5rem;
+      `}
+            
+      ${media.lg`
+        margin-bottom: 6rem;
+      `}
+    }
+    
+    > header {
+    margin-bottom: ${props => props.theme.indentsLG};
+    text-align: center;
+        
+        ${media.md`
+            margin: 0 auto 4rem;
+            width: 80rem;
+        `}        
+        ${media.lg`
+            margin: 0 auto 5rem;
+            width: 80rem;
+        `}
+    } 
+  }
+`;
+
+const ArticleDate = styled.div`
+    margin-top: 1rem;
+  
+    > span {
+      display: inline-block;
+      color: ${props => props.theme.colorLightest};
+    }
+  }
+`;
 
 class BlogPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            post: null
+            post: false
         };
     }
+
+
     componentWillMount () {
-        return fetch(BLOG_API + '/wp-json/wp/v2/posts/' + this.props.params.id).then((response) => response.json())
+
+        return fetch('http://3.wm22736-wordpress.tw1.ru/wp-json/wp/v2/posts/' + this.props.match.params.id).then((response) => response.json())
             .then(post => {
                 this.setState({
-                    post: post,
+                    post: post
                 });
-            })
 
+                content = this.state.post;
+                console.log(content);
+
+
+
+            });
     }
+
+
+    componentWillUpdate() {
+        content = this.state.post;
+    }
+
+    componentDidMount () {
+        this.setState({
+            postLoad: true
+        });
+    }
+
+
     render() {
-        if (!this.state.post) return <div>Загрузка...</div>
-        return <div>
-            <h3>{this.state.post.title.rendered}</h3>
-            <div dangerouslySetInnerHTML={{ __html : this.state.post.content.rendered }}></div>
-        </div>
+        console.log('render');
+        return (
+
+            <SectionBox>
+                <Container>
+                    <ArticlePage>
+                        {this.state.post ? <article><header><TitleH1>{this.state.post.title.rendered}</TitleH1><ArticleDate><span>{this.state.post.date_gmt}</span></ArticleDate></header>{this.state.post ? <Wysiwyg dangerouslySetInnerHTML={{ __html : this.state.post.content.rendered }}></Wysiwyg> : <div>загрузка</div>}</article> : <div>загрузка</div>}
+                    </ArticlePage>
+                </Container>
+            </SectionBox>
+        )
     }
 }
 
