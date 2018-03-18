@@ -8,6 +8,7 @@ import {Container, media} from'../../StyleConfig';
 import {rgba, size, ellipsis} from 'polished';
 
 const FooterBody = styled.footer`
+    position: relative;
     background: #fff;
 
   &__copyright-content {

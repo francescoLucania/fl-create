@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import BLOG_API from '../../pages/Home/Home';
+import Loader from '../../components/Loader/Loader';
 
 // styles
 import styled, {css, ThemeProvider} from 'styled-components';
 import {media, Container, SectionBox, Wysiwyg, Button, ButtonLinkMod, TitleH1, TitleH2} from'../../StyleConfig';
 
-var content;
+
+var loaderContent = '<загрузка.../>'
 
 const ArticlePage = styled.div`
   > article {
@@ -63,18 +65,7 @@ class BlogPage extends React.Component {
                 this.setState({
                     post: post
                 });
-
-                content = this.state.post;
-                console.log(content);
-
-
-
             });
-    }
-
-
-    componentWillUpdate() {
-        content = this.state.post;
     }
 
     componentDidMount () {
@@ -91,7 +82,10 @@ class BlogPage extends React.Component {
             <SectionBox>
                 <Container>
                     <ArticlePage>
-                        {this.state.post ? <article><header><TitleH1>{this.state.post.title.rendered}</TitleH1><ArticleDate><span>{this.state.post.date_gmt}</span></ArticleDate></header>{this.state.post ? <Wysiwyg dangerouslySetInnerHTML={{ __html : this.state.post.content.rendered }}></Wysiwyg> : <div>загрузка</div>}</article> : <div>загрузка</div>}
+                        {this.state.post ?
+                            <article><header><TitleH1>{this.state.post.title.rendered}</TitleH1><ArticleDate><span>{this.state.post.date_gmt}</span></ArticleDate></header>{this.state.post ? <Wysiwyg dangerouslySetInnerHTML={{ __html : this.state.post.content.rendered }}></Wysiwyg> : <div></div>}</article>
+                            :
+                            <Loader><span>{loaderContent}</span></Loader>}
                     </ArticlePage>
                 </Container>
             </SectionBox>

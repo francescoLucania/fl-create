@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Switch, Route} from 'react-router-dom';
+import {Switch, Route, Redirect} from 'react-router-dom';
 import Home from '../../pages/Home/Home';
 import Demo from '../../pages/Demo/Demo';
 import BlogPage from '../../pages/BlogPage/BlogPage';
@@ -73,8 +73,9 @@ class Main extends Component {
         return (
             <StyleMain id="site-main">
                 <Switch>
-                    <Route exact path='/' component={Home}/>
-                    <Route path="/:id" component={BlogPage} />
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/home/:id" component={BlogPage} />
+                    <Route path="/demo" component={Demo} />
                 </Switch>
             </StyleMain>
         )

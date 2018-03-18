@@ -257,14 +257,15 @@ const HeaderLogo = styled.a`
      ${media.md`
         ${size('6rem')};
     `}
-     
-    > img {
-        display: block;
-        width: 100%;
-        height: auto;
-        border-radius: 50%;
-        vertical-align: top;
-    }
+    > a {
+        > img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            vertical-align: top;
+        }
+    } 
 `;
 
 const HeaderNavigateBox = styled.div`
@@ -493,7 +494,8 @@ class Header extends Component {
 
                 <HeaderGrid>
                     <HeaderLogo className="logo-box">
-                        <img src={Logo} alt=""/>
+                        <Link to="/"><img src={Logo} alt=""/></Link>
+
                     </HeaderLogo>
 
                     <HeaderNavigateBox>

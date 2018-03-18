@@ -34,7 +34,7 @@ export const baseTheme = {
 
 
     // base
-    baseFontFamily: '\'Roboto Mono\', monospace;',
+    baseFontFamily: '"Roboto Mono", monospace;',
     baseFontWeight: '400',
 
 

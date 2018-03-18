@@ -30,6 +30,11 @@ body > #root {
   background: #5409ff;
 }
 
+header,
+footer {
+  z-index: 99;
+}
+
 h1,
 h2,
 h3,
@@ -97,4 +102,39 @@ table {
 
 :disabled {
   cursor: not-allowed;
+}
+
+
+@keyframes mobileMenuFade {
+
+  from {
+
+  }
+
+  to {
+    opacity: .3;
+  }
+}
+
+@keyframes loaderHide {
+
+  from {
+    opacity: 1;
+  }
+
+  to {
+    z-index: -1;
+    opacity: 0;
+  }
+}
+
+@keyframes loaderContentHide {
+
+  from {
+
+  }
+
+  to {
+    visibility: hidden;
+  }
 }

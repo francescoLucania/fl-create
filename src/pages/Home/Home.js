@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Loader from '../../components/Loader/Loader';
+import Moment from 'react-moment';
 import {NavLink, Link} from 'react-router-dom';
 import BlogPage from '../../pages/BlogPage/BlogPage';
 // styles
@@ -65,13 +67,14 @@ const ArticleDate = styled.div`
     }
   }
 `;
-
+var loaderContent = "< загрузка... />";
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = { // инициализируем состояние по-умолчанию
-            posts: []
+            posts: [],
+            postsLoad: false
         };
     }
 
@@ -81,6 +84,7 @@ class Home extends Component {
             .then(posts => {
                 this.setState({
                     posts: posts, // обновляем состояние страницы
+                    postsLoad: true
                 });
             })
     }
@@ -93,15 +97,19 @@ class Home extends Component {
         return (
             <SectionBox>
                 <Container>
+
+                    <Loader className={this.state.postsLoad ? 'hide' : 'hide'}><span>{loaderContent}</span></Loader>
                     <HomeBlog id="list">
                         {
                             this.state.posts.map(item => (
                                 <article key={item.id}>
                                     <header>
-                                        <TitleH2><Link to={`/${item.id}`}>{item.title.rendered}</Link></TitleH2>
-                                        <ArticleDate><span>{item.date_gmt}</span></ArticleDate>
+                                        <TitleH2><Link  to={`/home/${item.id}`}>{item.title.rendered}</Link></TitleH2>
+                                        <ArticleDate><span>
+                                            <Moment format="YYYY/MM/DD">{item.date_gmt}</Moment></span>
+                                        </ArticleDate>
                                     </header>
-                                    <Link to={`/${item.id}`}>
+                                    <Link to={`/home/${item.id}`}>
                                         <ArticleImage>
                                             <img src={item.better_featured_image.source_url} alt=""/>
                                         </ArticleImage>
@@ -110,6 +118,8 @@ class Home extends Component {
                             ))
                         }
                     </HomeBlog>
+
+
                 </Container>
             </SectionBox>
         )
