@@ -98,7 +98,7 @@ class Home extends Component {
             <SectionBox>
                 <Container>
 
-                    <Loader className={this.state.postsLoad ? 'hide' : 'hide'}><span>{loaderContent}</span></Loader>
+                    <Loader className={this.state.postsLoad ? 'is-hidden' : ''}><span>{loaderContent}</span></Loader>
                     <HomeBlog id="list">
                         {
                             this.state.posts.map(item => (

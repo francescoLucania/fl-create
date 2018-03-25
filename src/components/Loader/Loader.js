@@ -14,10 +14,10 @@ const Loader = styled.div`
     align-items: center;
     background: #fff;
     z-index: 98;
-    
-    &.hide {
+
+    &.is-hidden {
       animation: loaderHide .6s linear 1s 1 alternate forwards;
-      
+
       > span {
         animation: loaderContentHide .4s linear .2s 1 alternate forwards;
       }

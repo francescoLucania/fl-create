@@ -8,8 +8,20 @@ import {Container, media} from'../../StyleConfig';
 import {rgba, size, ellipsis} from 'polished';
 
 const FooterBody = styled.footer`
-    position: relative;
-    background: #fff;
+  position: relative;
+  background: #fff;
+
+  ${media.xs`
+     padding: 0 ${props => props.theme.indentsXS};
+ `}
+
+   ${media.md`
+      padding: 0 ${props => props.theme.indentsMD};
+  `}
+
+    ${media.lg`
+       padding: 0 ${props => props.theme.indentsLG};
+   `}
 
   &__copyright-content {
     @include font(1.2rem, 1.2rem);
@@ -23,15 +35,15 @@ const FooterGrid = styled.footer`
         padding: 2rem 0;
         text-align: center;
     `}
-     
+
      ${media.md`
         display: flex;
         justify-content: space-between;
         align-items: stretch;
         padding: 4rem 0;
         text-align: left;
-    `}    
-      
+    `}
+
      ${media.lg`
         margin: 0 auto;
         max-width: 142rem;
@@ -42,8 +54,8 @@ const FooterNavigate = styled.footer`
 
     ${media.xs`
         ddisplay: none;
-    `}  
-      
+    `}
+
     ${media.md`
         display: flex;
     `}
@@ -54,12 +66,12 @@ const FooterNavigate = styled.footer`
             ${media.md`
                 margin-left: 4rem;
             `}
-        } 
+        }
 
         > li {
         display: block;
         padding: .3rem 1rem;
-        
+
         > a {
           font-size: 1.2rem;
           line-height: 1.8rem;
@@ -67,19 +79,19 @@ const FooterNavigate = styled.footer`
           display: inline-block;
           color: ${props => props.theme.colorBase};
           text-decoration: none;
-        
+
           ${media.xs`
             font-size: 1.6rem;
             line-height: 1;
             white-space: nowrap;
           `}
-        
+
           &:hover {
             &::after {
               width: 100%;
             }
           }
-        
+
           &::after {
             position: absolute;
             display: block;
@@ -93,11 +105,11 @@ const FooterNavigate = styled.footer`
             content: '';
           }
         }
-        
+
         > a.is-current {
           pointer-events: none;
           color: ${props => props.theme.colorLightest};
-        
+
           &::after {
             width: 100%;
             height: .1rem;
