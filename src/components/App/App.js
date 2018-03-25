@@ -21,7 +21,7 @@ const StyleApp= styled.div`
 export const siteNavigateMenuLinks = [
 
     {
-        link: '/',
+        link: '/home',
         label: '01: Home'
     },
 

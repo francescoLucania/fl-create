@@ -3,6 +3,7 @@ import {Switch, Route, Redirect} from 'react-router-dom';
 import Home from '../../pages/Home/Home';
 import Demo from '../../pages/Demo/Demo';
 import BlogPage from '../../pages/BlogPage/BlogPage';
+import Profile from '../../pages/Profile/Profile';
 
 // import About from '../../pages/About/About';
 // import Contacts from '../../pages/Contacts/Contacts';
@@ -19,15 +20,15 @@ const StyleMain = styled.main`
   background: #fff;
   will-change: background;
   transition: background .6s;
-  
+
    ${media.md`
       margin-top: 12rem;
     `};
-   
+
    &.site-main-scroll-mod {
     background: ${props => props.theme.bgColorMode};
    }
-  
+
 `;
 
 
@@ -73,9 +74,11 @@ class Main extends Component {
         return (
             <StyleMain id="site-main">
                 <Switch>
-                    <Route exact path="/" component={Home}/>
+                    <Route exact path="/home" component={Home}/>
                     <Route path="/home/:id" component={BlogPage} />
+                    <Route path="/profile" component={Profile} />
                     <Route path="/demo" component={Demo} />
+                    <Redirect from="/" exact to="/home" />
                 </Switch>
             </StyleMain>
         )
