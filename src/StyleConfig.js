@@ -68,15 +68,15 @@ export const media = Object.keys(sizesMQ).reduce((acc, label) => {
 
 // SectionBox
 
-export const SectionBox = styled.div`  
+export const SectionBox = styled.div`
     ${media.xs`
         padding: 4rem 0;
     `}
-    
+
     ${media.md`
     padding: 6rem 0;
-    `}    
-    
+    `}
+
     ${media.lg`
     padding: 8rem 0;
     `}
@@ -85,19 +85,19 @@ export const SectionBox = styled.div`
 // container
 export const Container = styled.div`
     margin: 0 auto;
-    
+
     ${media.xs`
     max-width: ${props => props.theme.containerWidthXS};
     padding-left: ${props => props.theme.indentsXS};
     padding-right: ${props => props.theme.indentsXS};
     `}
-    
+
     ${media.md`
     max-width: ${props => props.theme.containerWidthMD};
     padding-left: ${props => props.theme.indentsMD};
     padding-right: ${props => props.theme.indentsMD};
     `}
-    
+
     ${media.lg`
     max-width: ${props => props.theme.containerWidthLG};
     padding-left: ${props => props.theme.indentsLG};
@@ -112,38 +112,40 @@ export const TitleH1 = styled.h1`
     font-weight: ${props => props.theme.headingFontWeight};
     font-size: 3.6rem;
     line-height: 1.4;
-    
+
     ${media.md`
     font-size: 4.2rem;
     `}
-    
+
     > a {
       text-decoration: none;
       color: ${props => props.theme.colorBase}
     }
-        
+
     > a:visited {
       text-decoration: none;
       color: ${props => props.theme.colorBase}
     }
 `;
 
+export const TitleH1_h2mod = TitleH1.withComponent('h2');
+
 export const TitleH2 = styled.h2`
     font-family: ${props => props.theme.headingFontFamily};
     font-weight: ${props => props.theme.headingFontWeight};
     font-size: 2.8rem;
     line-height: 3.6rem;
-    
+
     ${media.md`
     font-size: 3.2rem;
     line-height: 4rem;
     `}
-    
+
     > a {
       text-decoration: none;
       color: ${props => props.theme.colorBase}
     }
-        
+
     > a:visited {
       text-decoration: none;
       color: ${props => props.theme.colorBase}
@@ -155,12 +157,40 @@ export const TitleH3 = styled.h3`
     font-weight: ${props => props.theme.headingFontWeight};
     font-size: 2.8rem;
     line-height: 3.6rem;
-    
+
     ${media.md`
     font-size: 2.8rem;
     line-height: 3.4rem;
     `}
 `;
+
+
+
+export const PromoTitleH1 = styled.h1`
+    font-family: ${props => props.theme.headingFontFamily};
+    font-weight: ${props => props.theme.headingFontWeight};
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+
+    ${media.md`
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+    `}
+`;
+
+
+export const PromoTitleH2 = styled.h2`
+    font-family: ${props => props.theme.headingFontFamily};
+    font-weight: ${props => props.theme.headingFontWeight};
+    font-size: 3.6rem;
+    line-height: 4.2rem;
+
+    ${media.md`
+    font-size: 7.4rem;
+    line-height: 8rem;
+    `}
+`;
+
 
 // forms
 
@@ -173,7 +203,7 @@ export const Button = styled.button`
         color: #fff;
         text-align: center;
         transition: .6s;
-        
+
         ${media.lg`
             &:hover {
                 background: ${props => props.theme.colorLighte}
@@ -355,7 +385,7 @@ export const Wysiwyg = styled.div`
         margin: 0 auto;
         width: 80rem;
     `}
-    
+
 
     > h1,
     > h2,
@@ -364,52 +394,52 @@ export const Wysiwyg = styled.div`
     > h5,
     > h6 {
         margin: 0;
-        
+
         &:not(:first-child) {
             margin-top: 4rem;
         }
-    
+
         &:not(:last-child) {
             margin-bottom: 2rem;
         }
     }
-    
+
     > h1 {
         font-family: ${props => props.theme.headingFontFamily};
         font-weight: ${props => props.theme.headingFontWeight};
         font-size: 3.6rem;
         line-height: 1.4;
-    
+
         ${media.md`
             font-size: 4.2rem;
             line-height: 4.8rem;
         `}
     }
-    
+
     > h2 {
         font-family: ${props => props.theme.headingFontFamily};
         font-weight: ${props => props.theme.headingFontWeight};
         font-size: 2.8rem;
         line-height: 3.6rem;
-        
+
         ${media.md`
             font-size: 3.2rem;
             line-height: 4rem;
         `}
     }
-    
+
     > h3 {
         font-family: ${props => props.theme.headingFontFamily};
         font-weight: ${props => props.theme.headingFontWeight};
         font-size: 2.8rem;
         line-height: 3.6rem;
-        
+
         ${media.md`
             font-size: 2.8rem;
             line-height: 3.4rem;
         `}
     }
-    
+
     a {
         display: inline-block;
         border-bottom: 1px dotted ${props => props.theme.colorBrand};
@@ -417,11 +447,11 @@ export const Wysiwyg = styled.div`
         color: ${props => props.theme.colorBrand};
         text-decoration: none;
     }
-    
+
     a:visited {
         color: ${props => props.theme.colorSound};
     }
-  
+
     // Blockquote
     > blockquote {
         @include wysiwyg-indents-lg;
@@ -441,12 +471,12 @@ export const Wysiwyg = styled.div`
             }
         }
     }
-    
+
         // Images
     > img {
         display: block;
         margin: 0 auto;
-        
+
         // ${media.lg`
         //     margin-left: -10rem;
         //     margin-right: -10rem;
@@ -454,12 +484,12 @@ export const Wysiwyg = styled.div`
     }
 
     > figure {
-    
+
         ${media.lg`
             margin-left: -10rem;
             margin-right: -10rem;
         `}
-    
+
     &:not(:first-child) {
         margin-top: 2rem;
     }
@@ -486,11 +516,11 @@ export const Wysiwyg = styled.div`
 
     // Lists
     > dl {
-    
+
         &:not(:first-child) {
             margin-top: 2rem;
         }
-    
+
         &:not(:last-child) {
             margin-bottom: 2rem;
         }
@@ -515,7 +545,7 @@ export const Wysiwyg = styled.div`
 
     > ol,
     > ul {
-    
+
     &:not(:first-child) {
         margin-top: 2rem;
     }
@@ -523,7 +553,7 @@ export const Wysiwyg = styled.div`
     &:not(:last-child) {
         margin-bottom: 2rem;
     }
-    
+
         ol {
             list-style: decimal;
         }
@@ -550,7 +580,7 @@ export const Wysiwyg = styled.div`
         &:not(:first-child) {
             margin-top: 2rem;
         }
-    
+
         &:not(:last-child) {
             margin-bottom: 2rem;
         }
@@ -559,7 +589,7 @@ export const Wysiwyg = styled.div`
     // Table
     &__table {
         overflow-x: auto;
-        
+
         ${media.lg`
             margin-left: -10rem;
             margin-right: -10rem;
@@ -587,12 +617,12 @@ export const Wysiwyg = styled.div`
             td {
                 padding: .5rem 0;
             }
-            
+
             th,
             td:not(:first-child) {
               padding-left: .5rem;
             }
-                            
+
             th,
             td:not(:last-child) {
               padding-right: .5rem;
@@ -602,17 +632,17 @@ export const Wysiwyg = styled.div`
 
     // Video
     > .video {
-        
+
         ${media.lg`
             margin-left: -10rem;
             margin-right: -10rem;
             padding-bottom: 70.25%; // 16:9
         `};
-       
+
         position: relative;
         padding-bottom: 56.25%; // 16:9
         height: 0;
-        
+
         &:not(:first-child) {
           margin-top: 2rem;
         }
@@ -629,18 +659,18 @@ export const Wysiwyg = styled.div`
             left: 0;
         }
     }
-    
+
     > .ya-music {
       padding: 2rem;
       background: #fff;
       overflow-x: auto;
-      
+
         ${media.lg`
             padding: 3rem;
             margin-left: -10rem;
             margin-right: -10rem;
         `};
-        
+
         &:not(:first-child) {
           margin-top: 2rem;
         }
@@ -648,7 +678,7 @@ export const Wysiwyg = styled.div`
         &:not(:last-child) {
           margin-bottom: 2rem;
         }
-        
+
         > iframe {
         border:none;
         width:900px;

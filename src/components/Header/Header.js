@@ -20,36 +20,36 @@ const HeaderBody = styled.header`
     z-index: 115;
     width: 100%;
     transition: all .6s;
-    
+
     &.site-header-scroll-mod {
-        
+
         .logo-box {
-          ${size('4.5rem')};
+          ${size('3.5rem')};
         }
     }
-    
+
     @keyframes mobileMenuFade {
 
         from {
-       
+
           }
-        
+
           to {
             opacity: .3;
           }
         }
-        
+
         @keyframes mobileMenu {
-        
+
           from {
-        
+
           }
-        
+
           to {
             transform: translateY(0);
           }
     }
-    
+
     .mobile-menu-fade {
       ${size('100%')};
       display: none;
@@ -60,18 +60,18 @@ const HeaderBody = styled.header`
       background: ${props => props.theme.colorBrand};
       opacity: 0;
       transition: opacity ${props => props.theme.transitionDurationBase};
-    
+
      ${media.md`
 
         display: none !important;
     `}
-    
+
       &.is-active {
         display: block;
         animation: mobileMenuFade .6s linear 0s 1 alternate forwards;
       }
     }
-    
+
     .mobile-menu {
         position: fixed;
         top: 0;
@@ -86,61 +86,61 @@ const HeaderBody = styled.header`
         border-color: rgba(${props => props.theme.colorBrand}, .5);
         background: #fff;
         transition: all .6s;
-    
+
          ${media.md`
             display: none !important;
         `}
-    
+
       &.is-active {
         animation: mobileMenu .3s linear .5s 1 alternate forwards;
       }
-    
+
       &__box {
         overflow-y: auto;
         padding: 3rem 2rem;
-    
+
         > ul {
           &:not(:last-child) {
             margin-bottom: 1rem;
           }
-    
+
           > li {
             display: block;
             padding: .3rem 1rem;
-    
+
             &:not(:last-child) {
               margin-bottom: 1rem;
             }
-    
+
             &:hover {
               a::after {
                 width: 100%;
               }
             }
-    
+
             > a {
               @include font(1.5rem,2.4rem);
               position: relative;
               display: inline-block;
               color: ${props => props.theme.colorBase};
               text-decoration: none;
-    
+
               @include mq(xs) {
                 ${ellipsis('100%')}
               }
-    
+
              ${media.xs`
                 font-size: 1.4rem;
                 line-height: 1.4rem;
                 white-space: nowrap;
             `}
-        
+
              ${media.md`
                 font-size: 1.4rem;
                 line-height: 1.4rem;
                 white-space: nowrap;
             `}
-    
+
               &::after {
                 position: absolute;
                 display: block;
@@ -154,12 +154,12 @@ const HeaderBody = styled.header`
                 content: '';
               }
             }
-    
+
             > a.is-current {
               pointer-events: none;
               color: ${props => props.theme.colorLightest};
-    
-    
+
+
               &::after {
                 width: 100%;
                 height: .1rem;
@@ -170,20 +170,20 @@ const HeaderBody = styled.header`
         }
       }
     }
-    
+
     .site-navigate {
-    
+
       > ul {
         display: flex;
         padding-right: 4rem;
-    
+
         @include mq(xs) {
           display: none;
         }
-    
+
         > li {
           padding: .3rem 1rem;
-    
+
           > a {
             @include font(1.4rem,1.4rem);
             position: relative;
@@ -191,13 +191,13 @@ const HeaderBody = styled.header`
             color: ${props => props.theme.colorBase};
             white-space: nowrap;
             text-decoration: none;
-    
+
             &:hover {
               &::after {
                 width: 100%;
               }
             }
-    
+
             &::after {
               position: absolute;
               display: block;
@@ -211,11 +211,11 @@ const HeaderBody = styled.header`
               content: '';
             }
           }
-    
+
           > a.is-current {
             pointer-events: none;
             color: ${props => props.theme.colorLightest};
-    
+
             &::after {
               width: 100%;
               height: .1rem;
@@ -236,24 +236,23 @@ const HeaderGrid = styled.div`
     padding: ${props => props.theme.indentsXS};
     background: #fff;
     transition: all .6s;
-    
+
      ${media.xs`
         flex-direction: row-reverse;
         padding: ${props => props.theme.indentsMD};
     `}
-         
+
      ${media.md`
         flex-direction: row;
         padding: ${props => props.theme.indentsLG};
     `}
 `;
 
-const HeaderLogo = styled.a`
-    ${size('4rem')};
-    display: block;
+const HeaderLogo = styled.div`
+    ${size('3.5rem')};
     transition: all .6s;
     will-change: width;
-         
+
      ${media.md`
         ${size('6rem')};
     `}
@@ -265,29 +264,29 @@ const HeaderLogo = styled.a`
             border-radius: 50%;
             vertical-align: top;
         }
-    } 
+    }
 `;
 
 const HeaderNavigateBox = styled.div`
     display: none;
-     
+
     ${media.md`
         display: block;
     `}
-     
+
      .site-navigate {
 
           > ul {
             display: flex;
             padding-right: 4rem;
-        
+
             @include mq(xs) {
               display: none;
             }
-        
+
             > li {
               padding: .3rem 1rem;
-        
+
               > a {
                 @include font(1.4rem,1.4rem);
                 position: relative;
@@ -295,13 +294,13 @@ const HeaderNavigateBox = styled.div`
                 color: ${props => props.theme.colorBase};
                 white-space: nowrap;
                 text-decoration: none;
-        
+
                 &:hover {
                   &::after {
                     width: 100%;
                   }
                 }
-        
+
                 &::after {
                   position: absolute;
                   display: block;
@@ -315,11 +314,11 @@ const HeaderNavigateBox = styled.div`
                   content: '';
                 }
               }
-        
+
               > a.is-current {
                 pointer-events: none;
                 color: ${props => props.theme.colorLightest};
-        
+
                 &::after {
                   width: 100%;
                   height: .1rem;
@@ -333,11 +332,11 @@ const HeaderNavigateBox = styled.div`
 
 const HeaderBurgerBox = styled.div`
     display: block;
-    
+
      ${media.md`
         display: none;
     `}
-     
+
     .burger {
       ${size('3rem')};
       position: relative;
@@ -346,7 +345,7 @@ const HeaderBurgerBox = styled.div`
       transition: .5s ease-in-out;
       cursor: default;
       outline: none;
-    
+
       &::before {
         font-size: 1.4rem;
         line-height: 1;
@@ -358,13 +357,13 @@ const HeaderBurgerBox = styled.div`
         color: ${props => props.theme.colorBase};
         content: 'menu'
       }
-    
+
       &.is-active {
         &::before {
           content: 'close'
         }
       }
-    
+
       > span {
         display: block;
         position: absolute;
@@ -376,40 +375,40 @@ const HeaderBurgerBox = styled.div`
         transform: rotate(0deg);
         transition: .25s ease-in-out;
       }
-    
+
       > span:nth-child(1) {
         top: 0;
       }
-    
+
       > span:nth-child(2),> span:nth-child(3) {
         top: 12px;
       }
-    
+
       > span:nth-child(4) {
         top: 24px;
       }
-    
+
       &.is-active {
         span:nth-child(1) {
           top: 12px;
           width: 0%;
           left: 50%;
         }
-    
+
         span:nth-child(2) {
           -webkit-transform: rotate(45deg);
           -moz-transform: rotate(45deg);
           -o-transform: rotate(45deg);
           transform: rotate(45deg);
         }
-    
+
         span:nth-child(3) {
           -webkit-transform: rotate(-45deg);
           -moz-transform: rotate(-45deg);
           -o-transform: rotate(-45deg);
           transform: rotate(-45deg);
         }
-    
+
         span:nth-child(4) {
           top: 18px;
           width: 0%;

@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
-import Loader from '../../components/Loader/Loader';
 import Moment from 'react-moment';
 import {NavLink, Link} from 'react-router-dom';
+
 import BlogPage from '../../pages/BlogPage/BlogPage';
+import Loader from '../../components/Loader/Loader';
+
 // styles
 import styled, {css, ThemeProvider} from 'styled-components';
 import {Container, SectionBox, Wysiwyg, media, Button, ButtonLinkMod, Checkbox, Radio, InputForm, TextareaForm, TitleH2} from'../../StyleConfig';
-
-
-const title = 'Hello World, this is my first styled component!';
 
 export const BLOG_API = "http://3.wm22736-wordpress.tw1.ru/";
 
@@ -16,25 +15,25 @@ const HomeBlog = styled.main`
   > article {
     &:not(last-child) {
       margin-bottom: ${props => props.theme.indentsLG};
-      
+
       ${media.md`
         margin-bottom: 5rem;
       `}
-            
+
       ${media.lg`
         margin-bottom: 6rem;
       `}
     }
-    
+
     > header {
         margin-bottom: ${props => props.theme.indentsLG};
         text-align: center;
-        
+
         ${media.lg`
             margin: 0 auto 2rem;
             width: 80rem;
         `}
-    } 
+    }
   }
 `;
 
@@ -43,14 +42,14 @@ const ArticleImage = styled.main`
     display: block;
     margin: 0 auto;
     max-width: 100%;
-  
+
     &:not(last-child) {
       margin-bottom: 2rem;
-      
+
       ${media.md`
         margin-bottom: 2rem;
       `}
-            
+
       ${media.lg`
         margin-bottom: 3rem;
       `}
@@ -60,7 +59,7 @@ const ArticleImage = styled.main`
 
 const ArticleDate = styled.div`
     margin-top: 1rem;
-  
+
     > span {
       display: inline-block;
       color: ${props => props.theme.colorLightest};
@@ -68,13 +67,14 @@ const ArticleDate = styled.div`
   }
 `;
 var loaderContent = "< загрузка... />";
+// an example array of items to be paged
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = { // инициализируем состояние по-умолчанию
-            posts: [],
-            postsLoad: false
+          posts: [],
+          postsLoad: false
         };
     }
 
@@ -83,8 +83,8 @@ class Home extends Component {
             .then((response) => response.json()) // получаем ответ в формате json
             .then(posts => {
                 this.setState({
-                    posts: posts, // обновляем состояние страницы
-                    postsLoad: true
+                  posts: posts, // обновляем состояние страницы
+                  postsLoad: true
                 });
             })
     }
@@ -117,6 +117,7 @@ class Home extends Component {
                                 </article>
                             ))
                         }
+
                     </HomeBlog>
 
 
@@ -125,5 +126,4 @@ class Home extends Component {
         )
     }
 }
-
 export default Home;
