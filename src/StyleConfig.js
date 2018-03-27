@@ -31,8 +31,6 @@ export const baseTheme = {
 
     colorError: 'red',
 
-
-
     // base
     baseFontFamily: '"Roboto Mono", monospace;',
     baseFontWeight: '400',
@@ -70,15 +68,15 @@ export const media = Object.keys(sizesMQ).reduce((acc, label) => {
 
 export const SectionBox = styled.div`
     ${media.xs`
-        padding: 4rem 0;
+      margin: 4rem 0;
     `}
 
     ${media.md`
-    padding: 6rem 0;
+      margin: 6rem 0;
     `}
 
     ${media.lg`
-    padding: 8rem 0;
+      margin: 10rem 0;
     `}
 `;
 
@@ -164,18 +162,18 @@ export const TitleH3 = styled.h3`
     `}
 `;
 
-
-
-export const PromoTitleH1 = styled.h1`
+export const Titleh4 = styled.h4`
     font-family: ${props => props.theme.headingFontFamily};
     font-weight: ${props => props.theme.headingFontWeight};
-    font-size: 1.8rem;
-    line-height: 2.4rem;
+    font-size: 3rem;
+    line-height: 3.8rem;
+`;
 
-    ${media.md`
-    font-size: 2.2rem;
-    line-height: 2.6rem;
-    `}
+export const SectionTitle = styled.h2`
+    font-family: ${props => props.theme.headingFontFamily};
+    font-weight: ${props => props.theme.headingFontWeight};
+    font-size: 4rem;
+    line-height: 5.2rem;
 `;
 
 
@@ -191,6 +189,60 @@ export const PromoTitleH2 = styled.h2`
     `}
 `;
 
+export const PromoTitleH1 = styled.h1`
+    font-family: ${props => props.theme.headingFontFamily};
+    font-weight: ${props => props.theme.headingFontWeight};
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+
+    ${media.md`
+    font-size: 2.2rem;
+    line-height: 2.6rem;
+    `}
+`;
+
+export const ListBox = styled.div`
+
+    > ol {
+        list-style: decimal;
+    }
+
+    > ul {
+        list-style: disc;
+    }
+
+    > ol,
+    > ul {
+
+    &:not(:first-child) {
+        margin-top: 2rem;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+        ol {
+            list-style: decimal;
+        }
+
+        ul {
+            list-style: disc;
+        }
+
+        @include wysiwyg-indents-md;
+
+        ol,
+        ul {
+            @include wysiwyg-indents-sm;
+        }
+
+        li {
+            margin-left: 2rem;
+            margin-top: 1rem;
+        }
+    }
+`;
 
 // forms
 
