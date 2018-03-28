@@ -79,7 +79,7 @@ class Home extends Component {
     }
 
     componentWillMount () {
-        return fetch(BLOG_API + '/wp-json/wp/v2/posts') // делаем запрос к Wordpress API
+        return fetch('http://3.wm22736-wordpress.tw1.ru/wp-json/wp/v2/posts') // делаем запрос к Wordpress API
             .then((response) => response.json()) // получаем ответ в формате json
             .then(posts => {
                 this.setState({

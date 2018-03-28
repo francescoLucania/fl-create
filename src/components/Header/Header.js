@@ -274,59 +274,51 @@ const HeaderNavigateBox = styled.div`
         display: block;
     `}
 
-     .site-navigate {
-
-          > ul {
-            display: flex;
-            padding-right: 4rem;
-
-            @include mq(xs) {
-              display: none;
+      > ul {
+        display: flex;
+        padding-right: 4rem;
+    
+        > li {
+          padding: .3rem 1rem;
+        
+          > a {
+            position: relative;
+            display: block;
+            color: ${props => props.theme.colorBase};
+            white-space: nowrap;
+            text-decoration: none;
+        
+            &:hover {
+              &::after {
+                width: 100%;
+              }
             }
-
-            > li {
-              padding: .3rem 1rem;
-
-              > a {
-                @include font(1.4rem,1.4rem);
-                position: relative;
-                display: block;
-                color: ${props => props.theme.colorBase};
-                white-space: nowrap;
-                text-decoration: none;
-
-                &:hover {
-                  &::after {
-                    width: 100%;
-                  }
-                }
-
-                &::after {
-                  position: absolute;
-                  display: block;
-                  top: 50%;
-                  left: 0;
-                  transform: translateY(-50%);
-                  width: 0;
-                  height: .3rem;
-                  background: ${props => props.theme.colorBrand};
-                  transition: all ${props => props.theme.transitionDurationBase};
-                  content: '';
-                }
-              }
-
-              > a.is-current {
-                pointer-events: none;
-                color: ${props => props.theme.colorLightest};
-
-                &::after {
-                  width: 100%;
-                  height: .1rem;
-                  background: ${props => props.theme.colorBase};
-                }
-              }
+        
+            &::after {
+              position: absolute;
+              display: block;
+              top: 50%;
+              left: 0;
+              transform: translateY(-50%);
+              width: 0;
+              height: .3rem;
+              background: ${props => props.theme.colorBrand};
+              transition: all ${props => props.theme.transitionDurationBase};
+              content: '';
             }
           }
+        
+          > a.is-current {
+            pointer-events: none;
+            color: ${props => props.theme.colorLightest};
+        
+            &::after {
+              width: 100%;
+              height: .1rem;
+              background: ${props => props.theme.colorBase};
+            }
+          }
+        } 
     }
 `;
 
@@ -498,7 +490,6 @@ class Header extends Component {
                     </HeaderLogo>
 
                     <HeaderNavigateBox>
-                        <nav className="site-navigate">
                             <ul>
                                 {siteNavigateMenuLinks.map((item, index)=>
 
@@ -507,7 +498,6 @@ class Header extends Component {
                                 )}
 
                             </ul>
-                        </nav>
                     </HeaderNavigateBox>
 
                     <HeaderBurgerBox>
