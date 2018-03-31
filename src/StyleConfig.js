@@ -2,12 +2,27 @@ import styled, {css, ThemeProvider} from 'styled-components';
 import { rgba, size } from 'polished';
 
 // VARIABLE
+
+export const mqBreakpoints = [
+  {
+    breakpointsXS: 320,
+    breakpointsXM: 480,
+    breakpointsMD: 768,
+    breakpointsLG: 1000,
+    breakpointsXL: 1400
+
+  }
+];
+
 export const baseTheme = {
 
     // Responsive
-    breakpointsXS: '320',
-    breakpointsMD: '768',
-    breakpointsLG: '1000',
+    breakpointsXS: mqBreakpoints[0].breakpointsXS,
+    breakpointsXM: mqBreakpoints[0].breakpointsXM,
+    breakpointsMD: mqBreakpoints[0].breakpointsMD,
+    breakpointsLG: mqBreakpoints[0].breakpointsLG,
+    breakpointsXL: mqBreakpoints[0].breakpointsXL,
+
 
     // Container
     containerWidthXS: '100%',
@@ -46,8 +61,11 @@ export const baseTheme = {
 
 export const sizesMQ = {
     xs: baseTheme.breakpointsXS,
+    xm: baseTheme.breakpointsXM,
     md: baseTheme.breakpointsMD,
-    lg: baseTheme.breakpointsLG
+    lg: baseTheme.breakpointsLG,
+    xl: baseTheme.breakpointsXL
+
 };
 
 // Iterate through the sizes and create a media template
@@ -101,6 +119,11 @@ export const Container = styled.div`
     padding-left: ${props => props.theme.indentsLG};
     padding-right: ${props => props.theme.indentsLG};
     `}
+`;
+
+export const ParagraphTextSmall = styled.p`
+    font-size: 1.3rem;
+    line-height: 1.8;
 `;
 
 
@@ -172,8 +195,13 @@ export const Titleh4 = styled.h4`
 export const SectionTitle = styled.h2`
     font-family: ${props => props.theme.headingFontFamily};
     font-weight: ${props => props.theme.headingFontWeight};
-    font-size: 4rem;
-    line-height: 5.2rem;
+    font-size: 3.6rem;
+    line-height: 4.2rem;
+
+    ${media.md`
+      font-size: 4rem;
+      line-height: 5.2rem;
+    `}
 `;
 
 

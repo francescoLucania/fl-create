@@ -81,9 +81,9 @@ const HeaderBody = styled.header`
         width: 100%;
         height: auto;
         border: 0;
-        border-top-width: 8rem;
+        border-top-width: 7rem;
         border-style: solid;
-        border-color: rgba(${props => props.theme.colorBrand}, .5);
+        border-color: #fff;
         background: #fff;
         transition: all .6s;
 
@@ -170,61 +170,6 @@ const HeaderBody = styled.header`
         }
       }
     }
-
-    .site-navigate {
-
-      > ul {
-        display: flex;
-        padding-right: 4rem;
-
-        @include mq(xs) {
-          display: none;
-        }
-
-        > li {
-          padding: .3rem 1rem;
-
-          > a {
-            @include font(1.4rem,1.4rem);
-            position: relative;
-            display: block;
-            color: ${props => props.theme.colorBase};
-            white-space: nowrap;
-            text-decoration: none;
-
-            &:hover {
-              &::after {
-                width: 100%;
-              }
-            }
-
-            &::after {
-              position: absolute;
-              display: block;
-              top: 50%;
-              left: 0;
-              transform: translateY(-50%);
-              width: 0;
-              height: .3rem;
-              background: ${props => props.theme.colorBrand};
-              transition: all ${props => props.theme.transitionDurationBase};
-              content: '';
-            }
-          }
-
-          > a.is-current {
-            pointer-events: none;
-            color: ${props => props.theme.colorLightest};
-
-            &::after {
-              width: 100%;
-              height: .1rem;
-              background: ${props => props.theme.colorBase};
-            }
-          }
-        }
-      }
-    }
 `;
 
 const HeaderGrid = styled.div`
@@ -276,24 +221,23 @@ const HeaderNavigateBox = styled.div`
 
       > ul {
         display: flex;
-        padding-right: 4rem;
-    
+
         > li {
           padding: .3rem 1rem;
-        
+
           > a {
             position: relative;
             display: block;
             color: ${props => props.theme.colorBase};
             white-space: nowrap;
             text-decoration: none;
-        
+
             &:hover {
               &::after {
                 width: 100%;
               }
             }
-        
+
             &::after {
               position: absolute;
               display: block;
@@ -307,18 +251,18 @@ const HeaderNavigateBox = styled.div`
               content: '';
             }
           }
-        
+
           > a.is-current {
             pointer-events: none;
             color: ${props => props.theme.colorLightest};
-        
+
             &::after {
               width: 100%;
               height: .1rem;
               background: ${props => props.theme.colorBase};
             }
           }
-        } 
+        }
     }
 `;
 

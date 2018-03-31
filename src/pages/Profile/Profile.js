@@ -1,13 +1,61 @@
 import React, {Component} from 'react';
-import BLOG_API from '../../pages/Home/Home';
-import Loader from '../../components/Loader/Loader';
 import PagePromo from '../../components/PagePromo/PagePromo';
+import ProjectsSlider from '../../components/ProjectsSlider/ProjectsSlider';
 
 // styles
 import styled, {css, ThemeProvider} from 'styled-components';
 import {Container, SectionBox, Wysiwyg, media, ButtonLinkMod, PromoTitleH1, PromoTitleH2, TitleH2, SectionTitle, Titleh4, ListBox} from'../../StyleConfig';
 
-const ProfileContacts = styled.div`
+// files
+import projectImage1 from '../../assets/bubble.jpg';
+
+export const projectsContent = [
+
+  {
+    imageUrl: {projectImage1},
+    title: 'Bubble',
+    description: 'front-end for website of comic book publishing',
+    url: 'https://bubble.ru'
+  },
+
+  {
+    imageUrl: {projectImage1},
+    title: 'AST Company',
+    description: 'front-end for website of AST Company!',
+    url: 'http://ast-inter.ru/'
+  },
+
+
+  {
+    imageUrl: {projectImage1},
+    title: 'go-brother',
+    description: 'front-end for promo application',
+    url: 'http://go-brother.ru/color_for_business/'
+  },
+
+
+  {
+    imageUrl: {projectImage1},
+    title: 'FoamLine',
+    description: 'front-end for website of biggest russian manufacturer of flexible foam',
+    url: 'https://foamline.com'
+  },
+  {
+    imageUrl: {projectImage1},
+    title: 'smolinvest.com',
+    description: 'front-end for website investment portal of smolensk region',
+    url: 'https://smolinvest.com'
+  },
+  {
+    imageUrl: {projectImage1},
+    title: 'etoro',
+    description: 'landing page from etoro',
+    url: 'http://u-wdfl.ru/etoro/'
+  }
+]
+
+
+const ProfileInformationBlock = styled.div`
   text-align: center;
 
   > h2 {
@@ -21,33 +69,35 @@ const ProfileContacts = styled.div`
 
 const ProfileGrid = styled.div`
 
-  ${media.lg`
+  ${media.xl`
       margin-left: -10rem;
       margin-right: -10rem;
   `}
 
 
   > ul {
-    ${media.md`
-      display: flex;
-      align-items: stretch;
-      margin-left: -${props => props.theme.indentsMD};
-      margin-right: -${props => props.theme.indentsMD};
-    `}
 
     ${media.lg`
+        display: flex;
         margin-left: -${props => props.theme.indentsLG};
         margin-right: -${props => props.theme.indentsLG};
     `}
 
     > li {
+
+      &:not(:last-child) {
+        margin-bottom: calc(${props => props.theme.indentsXS} * 2);
+      }
+
       ${media.md`
-          padding-left: calc(${props => props.theme.indentsMD} / 2);
-          padding-right: calc(${props => props.theme.indentsMD} / 2);
-          width: 33.33333%;
+        &:not(:last-child) {
+          margin-bottom: calc(${props => props.theme.indentsMD} * 2);
+        }
       `}
 
       ${media.lg`
+          margin-bottom: 0;
+          width: 33.33333%;
           padding-left: calc(${props => props.theme.indentsLG} / 2);
           padding-right: calc(${props => props.theme.indentsLG} / 2);
       `}
@@ -65,17 +115,19 @@ const ProfileGrid = styled.div`
       }
     }
   }
-
-
 `;
 
 class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    posts: []
-  };
-}
+      posts: []
+    };
+  }
+
+  componentDidMount () {
+    window.scrollTo(0, 0);
+  }
 
   render() {
     return (
@@ -92,7 +144,12 @@ class Profile extends Component {
             </PagePromo>
           </Container>
         </SectionBox>
-
+        <SectionBox>
+          <ProfileInformationBlock>
+            <SectionTitle>Last Projects</SectionTitle>
+            <ProjectsSlider items={projectsContent}/>
+          </ProfileInformationBlock>
+        </SectionBox>
         <SectionBox>
           <Container>
           <ProfileGrid>
@@ -104,7 +161,7 @@ class Profile extends Component {
                   <ul>
                     <li>html: jade/pug, haml</li>
                     <li>css: sass, stylus, bem</li>
-                    <li>Java Script: jQuery, React</li>
+                    <li>JavaScript: jQuery, React</li>
                     <li>Gulp, Webpack</li>
                   </ul>
                 </ListBox>
@@ -125,10 +182,10 @@ class Profile extends Component {
         </SectionBox>
         <SectionBox>
         <Container>
-          <ProfileContacts>
+          <ProfileInformationBlock>
             <SectionTitle>Make contact with us</SectionTitle>
             <p>Email is the best way, to get in touch please use the form or email us at <a href='mailto:francescolucaniacom@gmail.com'>francescolucaniacom@gmail.com</a></p>
-          </ProfileContacts>
+          </ProfileInformationBlock>
         </Container>
         </SectionBox>
       </div>

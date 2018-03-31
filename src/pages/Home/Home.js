@@ -5,6 +5,7 @@ import {NavLink, Link} from 'react-router-dom';
 import BlogPage from '../../pages/BlogPage/BlogPage';
 import Loader from '../../components/Loader/Loader';
 
+
 // styles
 import styled, {css, ThemeProvider} from 'styled-components';
 import {Container, SectionBox, Wysiwyg, media, Button, ButtonLinkMod, Checkbox, Radio, InputForm, TextareaForm, TitleH2} from'../../StyleConfig';
@@ -78,52 +79,49 @@ class Home extends Component {
         };
     }
 
-    componentWillMount () {
-        return fetch('http://3.wm22736-wordpress.tw1.ru/wp-json/wp/v2/posts') // делаем запрос к Wordpress API
-            .then((response) => response.json()) // получаем ответ в формате json
-            .then(posts => {
-                this.setState({
-                  posts: posts, // обновляем состояние страницы
-                  postsLoad: true
-                });
-            })
-    }
+  componentWillMount () {
+    return fetch('http://3.wm22736-wordpress.tw1.ru/wp-json/wp/v2/posts') // делаем запрос к Wordpress API
+      .then((response) => response.json()) // получаем ответ в формате json
+      .then(posts => {
+          this.setState({
+            posts: posts, // обновляем состояние страницы
+            postsLoad: true
+          });
+        })
+  }
 
-    componentDidMount () {
+  componentDidMount () {
+    window.scrollTo(0, 0);
+  }
 
-    }
+  render() {
+    return (
+      <SectionBox>
+        <Container>
+          <Loader className={this.state.postsLoad ? 'is-hidden' : ''}><span>{loaderContent}</span></Loader>
+          <HomeBlog id="list">
+            {
+              this.state.posts.map(item => (
+                <article key={item.id}>
+                  <header>
+                    <TitleH2><Link  to={`/home/${item.id}`}>{item.title.rendered}</Link></TitleH2>
+                    <ArticleDate><span>
+                      <Moment format="YYYY/MM/DD">{item.date_gmt}</Moment></span>
+                    </ArticleDate>
+                  </header>
+                  <Link to={`/home/${item.id}`}>
+                    <ArticleImage>
+                      <img src={item.better_featured_image.source_url} alt=""/>
+                    </ArticleImage>
+                  </Link>
+                </article>
+              ))
+            }
 
-    render() {
-        return (
-            <SectionBox>
-                <Container>
-
-                    <Loader className={this.state.postsLoad ? 'is-hidden' : ''}><span>{loaderContent}</span></Loader>
-                    <HomeBlog id="list">
-                        {
-                            this.state.posts.map(item => (
-                                <article key={item.id}>
-                                    <header>
-                                        <TitleH2><Link  to={`/home/${item.id}`}>{item.title.rendered}</Link></TitleH2>
-                                        <ArticleDate><span>
-                                            <Moment format="YYYY/MM/DD">{item.date_gmt}</Moment></span>
-                                        </ArticleDate>
-                                    </header>
-                                    <Link to={`/home/${item.id}`}>
-                                        <ArticleImage>
-                                            <img src={item.better_featured_image.source_url} alt=""/>
-                                        </ArticleImage>
-                                    </Link>
-                                </article>
-                            ))
-                        }
-
-                    </HomeBlog>
-
-
-                </Container>
-            </SectionBox>
-        )
-    }
+          </HomeBlog>
+        </Container>
+      </SectionBox>
+    )
+  }
 }
 export default Home;

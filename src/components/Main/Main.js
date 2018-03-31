@@ -4,6 +4,8 @@ import Home from '../../pages/Home/Home';
 import Demo from '../../pages/Demo/Demo';
 import BlogPage from '../../pages/BlogPage/BlogPage';
 import Profile from '../../pages/Profile/Profile';
+import Contacts from '../../pages/Contacts/Contacts';
+
 
 // import About from '../../pages/About/About';
 // import Contacts from '../../pages/Contacts/Contacts';
@@ -77,6 +79,7 @@ class Main extends Component {
                     <Route exact path="/home" component={Home}/>
                     <Route path="/home/:id" component={BlogPage} />
                     <Route path="/profile" component={Profile} />
+                    <Route path="/Contacts" component={Contacts} />
                     <Route path="/demo" component={Demo} />
                     <Redirect from="/" exact to="/home" />
                 </Switch>
