@@ -52,71 +52,76 @@ const FooterGrid = styled.footer`
 
 const FooterNavigate = styled.footer`
 
-    ${media.xs`
-        ddisplay: none;
-    `}
+  ${media.xs`
+      ddisplay: none;
+  `}
 
-    ${media.md`
-        display: flex;
-    `}
+  ${media.md`
+      display: flex;
+  `}
 
-    > ul {
-        &:not(:first-child) {
+  > ul {
 
-            ${media.md`
-                margin-left: 4rem;
-            `}
-        }
+    &:not(:first-child) {
+      ${media.xs`
+          margin-bottom: 1rem;
+      `}
 
-        > li {
-        display: block;
-        padding: .3rem 1rem;
+      ${media.md`
+          margin-bottom: 0;
+          margin-left: 4rem;
+      `}
+    }
 
-        > a {
-          font-size: 1.2rem;
-          line-height: 1.8rem;
-          position: relative;
-          display: inline-block;
-          color: ${props => props.theme.colorBase};
-          text-decoration: none;
+    > li {
+      display: block;
+      padding: .3rem 1rem;
 
-          ${media.xs`
-            font-size: 1.6rem;
-            line-height: 1;
-            white-space: nowrap;
-          `}
+      > a {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        position: relative;
+        display: inline-block;
+        color: ${props => props.theme.colorBase};
+        text-decoration: none;
 
-          &:hover {
-            &::after {
-              width: 100%;
-            }
-          }
+        ${media.md`
+          font-size: 1.6rem;
+          line-height: 1;
+          white-space: nowrap;
+        `}
 
-          &::after {
-            position: absolute;
-            display: block;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            width: 0;
-            height: .3rem;
-            background: ${props => props.theme.colorBrand};
-            transition: all ${props => props.theme.transitionDurationBase};
-            content: '';
-          }
-        }
-
-        > a.is-current {
-          pointer-events: none;
-          color: ${props => props.theme.colorLightest};
-
+        &:hover {
           &::after {
             width: 100%;
-            height: .1rem;
-            background: ${props => props.theme.colorBase};
           }
         }
+
+        &::after {
+          position: absolute;
+          display: block;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          width: 0;
+          height: .3rem;
+          background: ${props => props.theme.colorBrand};
+          transition: all ${props => props.theme.transitionDurationBase};
+          content: '';
         }
+      }
+
+      > a.is-current {
+        pointer-events: none;
+        color: ${props => props.theme.colorLightest};
+
+        &::after {
+          width: 100%;
+          height: .1rem;
+          background: ${props => props.theme.colorBase};
+        }
+      }
+    }
 `;
 
 const FooterContent = styled.footer`
@@ -127,32 +132,30 @@ const FooterContent = styled.footer`
 
 
 class Footer extends Component {
-    render() {
-        return (
-            <FooterBody>
-                <FooterGrid>
-                    <FooterNavigate>
-                        <ul>
-                            {siteNavigateMenuLinks.map((item, index)=>
-                                <li key={index}><NavLink to={item.link}>{item.label}</NavLink></li>
-                            )}
+render() {
+    return (
+      <FooterBody>
+        <FooterGrid>
+          <FooterNavigate>
+            <ul>
+              {siteNavigateMenuLinks.map((item, index)=>
+                <li key={index}><NavLink to={item.link}>{item.label}</NavLink></li>
+              )}
 
-                        </ul>
-                        <ul>
-                            {siteFooterContacts.map((item, index)=>
-                                <li key={index}><NavLink to={item.link} target="_blank">{item.label}</NavLink></li>
-                            )}
+            </ul>
+            <ul>
+                {siteFooterContacts.map((item, index)=>
+                  <li key={index}><NavLink to={item.link} target="_blank">{item.label}</NavLink></li>
+              )}
 
-                        </ul>
-                    </FooterNavigate>
+            </ul>
+          </FooterNavigate>
 
-                    <FooterContent>
-                        © 2017, francescolucania.com
-                    </FooterContent>
-                </FooterGrid>
-            </FooterBody>
-        )
-    }
+          <FooterContent>© 2018, francescolucania.com</FooterContent>
+        </FooterGrid>
+      </FooterBody>
+    )
+  }
 }
 
 export default Footer;

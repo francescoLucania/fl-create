@@ -76,6 +76,7 @@ const ProfileGrid = styled.div`
 
 
   > ul {
+    padding-left: 1rem;
 
     ${media.lg`
         display: flex;
@@ -84,7 +85,6 @@ const ProfileGrid = styled.div`
     `}
 
     > li {
-
       &:not(:last-child) {
         margin-bottom: calc(${props => props.theme.indentsXS} * 2);
       }
@@ -140,7 +140,7 @@ class Profile extends Component {
                 <PromoTitleH2>About Me</PromoTitleH2>
               </header>
               <p>FRANCESCO LUCANIA I{"'"}M A FRONTEND DEVELOPER IN RUSSIA CURRENTLY WORKING AT <a target="_blank" href="">COALLA</a>.</p>
-              <p>OCTOBER 2017</p>
+              <p>OCTOBER 2018</p>
             </PagePromo>
           </Container>
         </SectionBox>

@@ -12,19 +12,15 @@ const PagePromo = styled.article`
   padding: 2rem;
 
   > header {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 
     ${media.md`
       margin-bottom: 4rem;
     `}
 
-    ${media.lg`
-      margin-bottom: 3rem;
-    `}
-
     > H1,
     > h2 {
-      margin-bottom: 4rem;
+      margin-bottom: 2rem;
 
       ${media.md`
         margin-bottom: 4rem;
