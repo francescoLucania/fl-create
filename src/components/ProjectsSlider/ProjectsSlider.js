@@ -10,6 +10,51 @@ import {mqBreakpoints, media, ParagraphTextSmall} from'../../StyleConfig';
 
 // files
 import projectImage1 from '../../assets/bubble.jpg';
+import projectImage2 from '../../assets/ast.jpg';
+import projectImage3 from '../../assets/brother.jpg';
+import projectImage4 from '../../assets/fomline.jpg';
+import projectImage5 from '../../assets/ip.jpg';
+import projectImage6 from '../../assets/etoro.jpg';
+
+const projectsContent = [
+
+  {
+    image: projectImage1,
+    title: 'Bubble',
+    description: 'front-end for website of comic book publishing',
+    url: 'https://bubble.ru'
+  },
+  {
+    image: projectImage2,
+    title: 'AST Company',
+    description: 'front-end for website of AST Company!',
+    url: 'http://ast-inter.ru/'
+  },
+  {
+    image: projectImage3,
+    title: 'go-brother',
+    description: 'front-end for promo application',
+    url: 'http://go-brother.ru/color_for_business/'
+  },
+  {
+    image: projectImage4,
+    title: 'FoamLine',
+    description: 'front-end for website of biggest russian manufacturer of flexible foam',
+    url: 'https://foamline.com'
+  },
+  {
+    image: projectImage5,
+    title: 'smolinvest.com',
+    description: 'front-end for website investment portal of smolensk region',
+    url: 'https://smolinvest.com'
+  },
+  {
+    image: projectImage6,
+    title: 'etoro',
+    description: 'landing page from etoro',
+    url: 'http://u-wdfl.ru/etoro/'
+  }
+]
 
 const ItemProject = styled.div`
   position: relative;
@@ -118,9 +163,9 @@ class ProjectsSlider extends React.Component {
     };
     return (
       <Slider {...settings}>
-        {this.props.items.map((item, index) =>
+        {projectsContent.map((item, index) =>
           <ItemProject key={index}>
-            <img src={projectImage1} alt=""/>
+            <img src={item.image} alt={item.title}/>
             <article>
               <h4>{item.title}</h4>
               <ParagraphTextSmall>{item.description}</ParagraphTextSmall>

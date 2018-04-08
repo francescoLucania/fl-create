@@ -7,55 +7,6 @@ import Loader from '../../components/Loader/Loader';
 import styled, {css, ThemeProvider} from 'styled-components';
 import {Container, SectionBox, Wysiwyg, media, ButtonLinkMod, PromoTitleH1, PromoTitleH2, TitleH2, SectionTitle, Titleh4, ListBox} from'../../StyleConfig';
 
-// files
-import projectImage1 from '../../assets/bubble.jpg';
-
-export const projectsContent = [
-
-  {
-    imageUrl: {projectImage1},
-    title: 'Bubble',
-    description: 'front-end for website of comic book publishing',
-    url: 'https://bubble.ru'
-  },
-
-  {
-    imageUrl: {projectImage1},
-    title: 'AST Company',
-    description: 'front-end for website of AST Company!',
-    url: 'http://ast-inter.ru/'
-  },
-
-
-  {
-    imageUrl: {projectImage1},
-    title: 'go-brother',
-    description: 'front-end for promo application',
-    url: 'http://go-brother.ru/color_for_business/'
-  },
-
-
-  {
-    imageUrl: {projectImage1},
-    title: 'FoamLine',
-    description: 'front-end for website of biggest russian manufacturer of flexible foam',
-    url: 'https://foamline.com'
-  },
-  {
-    imageUrl: {projectImage1},
-    title: 'smolinvest.com',
-    description: 'front-end for website investment portal of smolensk region',
-    url: 'https://smolinvest.com'
-  },
-  {
-    imageUrl: {projectImage1},
-    title: 'etoro',
-    description: 'landing page from etoro',
-    url: 'http://u-wdfl.ru/etoro/'
-  }
-]
-
-
 const ProfileInformationBlock = styled.div`
   text-align: center;
 
@@ -74,8 +25,6 @@ const ProfileGrid = styled.div`
       margin-left: -10rem;
       margin-right: -10rem;
   `}
-
-
   > ul {
     padding-left: 1rem;
 
@@ -118,8 +67,6 @@ const ProfileGrid = styled.div`
   }
 `;
 
-var loaderContent = "< загрузка... />";
-
 class Profile extends Component {
   constructor(props) {
     super(props);
@@ -150,7 +97,7 @@ class Profile extends Component {
         <SectionBox>
           <ProfileInformationBlock>
             <SectionTitle>Last Projects</SectionTitle>
-            <ProjectsSlider items={projectsContent}/>
+            <ProjectsSlider/>
           </ProfileInformationBlock>
         </SectionBox>
         <SectionBox>
@@ -191,7 +138,7 @@ class Profile extends Component {
           </ProfileInformationBlock>
         </Container>
         </SectionBox>
-        <Loader className="is-hidden"><span>{loaderContent}</span></Loader>
+        <Loader className="is-hidden"><span><i/></span></Loader>
       </div>
     )
   }

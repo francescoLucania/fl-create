@@ -5,6 +5,8 @@ import styled, {css, ThemeProvider} from 'styled-components';
 import {media} from'../../StyleConfig';
 import {rgba, size, ellipsis} from 'polished';
 
+import Logo from '../../assets/logo.jpg';
+
 const Loader = styled.div`
     ${size('100%')};
     position: fixed;
@@ -24,11 +26,18 @@ const Loader = styled.div`
       }
     }
 
-    > span {
-        font-family: ${props => props.theme.headingFontFamily};
-        font-weight: ${props => props.theme.headingFontWeight};
-        text-transform: uppercase;
-        color: #000;
+    span {
+      > i {
+        ${size('6.5rem')};
+        display: block;
+        border-radius: 50%;
+        overflow: hidden;
+        vertical-align: top;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(${Logo});
+        animation: loaderRotate 1.2s linear infinite;
+      }
     }
 `;
 

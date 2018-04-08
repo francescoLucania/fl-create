@@ -29,7 +29,7 @@ const FooterBody = styled.footer`
   }
 `;
 
-const FooterGrid = styled.footer`
+const FooterGrid = styled.div`
 
      ${media.xs`
         padding: 2rem 0;
@@ -50,10 +50,10 @@ const FooterGrid = styled.footer`
     `}
 `;
 
-const FooterNavigate = styled.footer`
+const FooterNavigate = styled.nav`
 
   ${media.xs`
-      ddisplay: none;
+      display: none;
   `}
 
   ${media.md`
@@ -124,7 +124,7 @@ const FooterNavigate = styled.footer`
     }
 `;
 
-const FooterContent = styled.footer`
+const FooterContent = styled.p`
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -145,7 +145,7 @@ render() {
             </ul>
             <ul>
                 {siteFooterContacts.map((item, index)=>
-                  <li key={index}><NavLink to={item.link} target="_blank">{item.label}</NavLink></li>
+                  <li key={index}><a href={item.link} target="_blank">{item.label}</a></li>
               )}
 
             </ul>

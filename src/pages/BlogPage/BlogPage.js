@@ -81,7 +81,7 @@ const ArticleDate = styled.div`
               :
               <span></span>
             }
-            <Loader className={this.state.post ? 'is-hidden' : ''}><span>{loaderContent}</span></Loader>
+            <Loader className={this.state.post ? 'is-hidden' : ''}><span><i/></span></Loader>
           </ArticlePage>
         </Container>
       </SectionBox>

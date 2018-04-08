@@ -258,13 +258,6 @@ export const ListBox = styled.div`
             list-style: disc;
         }
 
-        @include wysiwyg-indents-md;
-
-        ol,
-        ul {
-            @include wysiwyg-indents-sm;
-        }
-
         li {
             margin-left: 2rem;
             margin-top: 1rem;

@@ -22,7 +22,7 @@ class Contacts extends Component {
   render() {
     return (
       <div>
-        <Loader className="is-hidden"><span>{loaderContent}</span></Loader>
+        <Loader className="is-hidden"><span><i/></span></Loader>
         <SectionBox>
           <Container>
           <PagePromo>

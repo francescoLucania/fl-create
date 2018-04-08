@@ -41,7 +41,7 @@ export const siteNavigateMenuLinks = [
 export const siteFooterContacts = [
 
     {
-        link: '//vk.com/francescolucania',
+        link: 'http://vk.com/francescolucania',
         label: '04: vk.com'
     },
 

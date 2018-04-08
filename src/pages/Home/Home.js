@@ -67,7 +67,7 @@ const ArticleDate = styled.div`
     }
   }
 `;
-var loaderContent = "< загрузка... />";
+
 // an example array of items to be paged
 
 class Home extends Component {
@@ -98,7 +98,7 @@ class Home extends Component {
     return (
       <SectionBox>
         <Container>
-          <Loader className={this.state.postsLoad ? 'is-hidden' : ''}><span>{loaderContent}</span></Loader>
+          <Loader className={this.state.postsLoad ? 'is-hidden' : ''}><span><i/></span></Loader>
           <HomeBlog id="list">
             {
               this.state.posts.map(item => (

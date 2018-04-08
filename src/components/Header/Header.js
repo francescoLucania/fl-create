@@ -119,7 +119,6 @@ const HeaderBody = styled.header`
             }
 
             > a {
-              @include font(1.5rem,2.4rem);
               position: relative;
               display: inline-block;
               color: ${props => props.theme.colorBase};
@@ -418,9 +417,7 @@ class Header extends Component {
 
                         <ul>
                             {siteFooterContacts.map((item, index)=>
-
-                                <li key={index}><NavLink to={item.link}  target="_blank">{item.label}</NavLink></li>
-
+                                <li key={index}><a href={item.link}  target="_blank">{item.label}</a></li>
                             )}
 
                         </ul>
