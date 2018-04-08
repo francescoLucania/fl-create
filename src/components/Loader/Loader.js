@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+
 // styles
 import styled, {css, ThemeProvider} from 'styled-components';
 import {media} from'../../StyleConfig';
@@ -16,7 +17,7 @@ const Loader = styled.div`
     z-index: 98;
 
     &.is-hidden {
-      animation: loaderHide .6s linear 1s 1 alternate forwards;
+      animation: loaderHide 2s linear 1s 1 alternate forwards;
 
       > span {
         animation: loaderContentHide .4s linear .2s 1 alternate forwards;

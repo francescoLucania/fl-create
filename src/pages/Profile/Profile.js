@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PagePromo from '../../components/PagePromo/PagePromo';
 import ProjectsSlider from '../../components/ProjectsSlider/ProjectsSlider';
+import Loader from '../../components/Loader/Loader';
 
 // styles
 import styled, {css, ThemeProvider} from 'styled-components';
@@ -117,6 +118,8 @@ const ProfileGrid = styled.div`
   }
 `;
 
+var loaderContent = "< загрузка... />";
+
 class Profile extends Component {
   constructor(props) {
     super(props);
@@ -188,6 +191,7 @@ class Profile extends Component {
           </ProfileInformationBlock>
         </Container>
         </SectionBox>
+        <Loader className="is-hidden"><span>{loaderContent}</span></Loader>
       </div>
     )
   }

@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
+import Loader from '../../components/Loader/Loader';
 import PagePromo from '../../components/PagePromo/PagePromo';
 
 // styles
 import {Container, SectionBox, PromoTitleH1, PromoTitleH2, TitleH2} from'../../StyleConfig';
+
+var loaderContent = "< загрузка... />";
 
 class Contacts extends Component {
   constructor(props) {
@@ -19,6 +22,7 @@ class Contacts extends Component {
   render() {
     return (
       <div>
+        <Loader className="is-hidden"><span>{loaderContent}</span></Loader>
         <SectionBox>
           <Container>
           <PagePromo>
@@ -26,7 +30,7 @@ class Contacts extends Component {
               <PromoTitleH1>03: Contacts</PromoTitleH1>
               <PromoTitleH2>Contact Me</PromoTitleH2>
             </header>
-            <p>Email is the best way, to get in touch please use the form or email us at</p>
+            <p>Email is the best way, to get in touch please email us at</p>
             <p><a href='mailto:francescolucaniacom@gmail.com'>francescolucaniacom@gmail.com</a></p>
           </PagePromo>
           </Container>
